@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ArcaneTinmen.Models
 {
     public class GameSleeve
     {
-        public int GameSleeveId { get; set; }
+        [Required]
         public int SleeveId { get; set; }
+        [Required]
         public int GameId { get; set; }
 
         public Sleeve Sleeve { get; set; }

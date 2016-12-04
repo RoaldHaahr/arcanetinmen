@@ -11,11 +11,11 @@ namespace ArcaneTinmen.Models
         public string Title { get; set; }
 
         [RegularExpression(@"([a-zA-Z]+\s{0,1})*", ErrorMessage = "Your first name can only consist of letters and spaces")]
-        [Required(ErrorMessage = "Please enter your name.")]
+        [Required(ErrorMessage = "Please enter your first name")]
         public string FirstName { get; set; }
 
         [RegularExpression(@"([a-zA-Z]+\s{0,1})*", ErrorMessage = "Your last name can only consist of letters and spaces")]
-        [Required]
+        [Required(ErrorMessage = "Please enter your last name")]
         public string LastName { get; set; }
 
         [RegularExpression(@"([a-zA-Z]*\d*)*", ErrorMessage = "Your password must only consist of numbers and letters.")]
@@ -27,26 +27,26 @@ namespace ArcaneTinmen.Models
         [Required(ErrorMessage = "Please confirm your password.")]
         public string ConfirmPassword { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter your address")]
         public string Address { get; set; }
 
         [RegularExpression(@"^\d{3,4}$", ErrorMessage = "The zip code must be either 3 or 4 digits")]
-        [Required]
+        [Required(ErrorMessage = "Please enter your zip code")]
         public int Zip { get; set; }
 
         [RegularExpression(@"^(\d{2}\s?){4}$", ErrorMessage = "Nope")]
-        public string Phone { get; set; }
+        public int Phone { get; set; }
 
         // Email must be able to handle period seperated values e.g. johndoe@students.baaa.dk
         [RegularExpression(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,3}$", ErrorMessage = "Not a valid email")]
-        [Required]
+        [Required(ErrorMessage = "Please enter your email")]
         public string Email { get; set; }
 
         public virtual ICollection<OrderPlacement> OrderPlacements { get; set; }
 
         public Customer() {}
 
-        public Customer(int customerId, string title, string firstName, string lastName, string address, int zip, string phone, string email)
+        public Customer(int customerId, string title, string firstName, string lastName, string address, int zip, int phone, string email)
         {
             CustomerId = customerId;
             Title = title;
