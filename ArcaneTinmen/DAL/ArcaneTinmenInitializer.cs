@@ -18,7 +18,9 @@ namespace ArcaneTinmen.DAL
                     Address = "Bakers Street 133",
                     Zip = 54895,
                     Phone = 66779922,
-                    Email = "hermionegranger@mail.com"
+                    Email = "hermionegranger@mail.com",
+                    Password = "123aB",
+                    ConfirmPassword = "123aB"
                 }
             };
             customers.ForEach(c => context.Customers.Add(c));

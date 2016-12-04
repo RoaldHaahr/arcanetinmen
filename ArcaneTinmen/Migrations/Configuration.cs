@@ -29,9 +29,11 @@ namespace ArcaneTinmen.Migrations
                     FirstName = "Hermione",
                     LastName = "Granger",
                     Address = "Bakers Street 133",
-                    Zip = 54895,
+                    Zip = 5489,
                     Phone = 66779922,
-                    Email = "hermionegranger@mail.com"
+                    Email = "hermionegranger@mail.com",
+                    Password = "123aBc",
+                    ConfirmPassword = "123aBc"
                 }
             };
             customers.ForEach(c => context.Customers.AddOrUpdate(c));

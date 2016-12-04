@@ -10,7 +10,7 @@ namespace ArcaneTinmen.Models
         
         public string Title { get; set; }
 
-        [RegularExpression(@"([a-zA-Z]+\s{0,1})*", ErrorMessage = "Your first name can only consist of letters and spaces")]
+        [RegularExpression(@"^([a-zA-Z]+\s{0,1})*", ErrorMessage = "Your first name can only consist of letters and spaces")]
         [Required(ErrorMessage = "Please enter your first name")]
         public string FirstName { get; set; }
 
@@ -18,7 +18,7 @@ namespace ArcaneTinmen.Models
         [Required(ErrorMessage = "Please enter your last name")]
         public string LastName { get; set; }
 
-        [RegularExpression(@"([a-zA-Z]*\d*)*", ErrorMessage = "Your password must only consist of numbers and letters.")]
+        [RegularExpression(@"^([a-zA-Z]*\d*)*", ErrorMessage = "Your password must only consist of numbers and letters.")]
         [Required(ErrorMessage = "Please enter a password.")]
         [StringLength(12, MinimumLength = 6, ErrorMessage = "Your password must be between 6 and 12 characters long")]
         public string Password { get; set; }
@@ -34,7 +34,7 @@ namespace ArcaneTinmen.Models
         [Required(ErrorMessage = "Please enter your zip code")]
         public int Zip { get; set; }
 
-        [RegularExpression(@"^(\d{2}\s?){4}$", ErrorMessage = "Nope")]
+        [RegularExpression(@"^\d{8}$", ErrorMessage = "Nope")]
         public int Phone { get; set; }
 
         // Email must be able to handle period seperated values e.g. johndoe@students.baaa.dk
