@@ -9,11 +9,18 @@ namespace ArcaneTinmen.Models
         [Required]
         public int OrderPlacementId { get; set; }
         [Required]
-        public int SleeveId { get; set; }
+        public string SleeveId { get; set; }
         [Required]
         public int Quantity { get; set; }
 
         public OrderPlacement OrderPlacement { get; set; }
         public Sleeve Sleeve { get; set; }
+
+        public OrderLine(int orderPlacementId, string sleeveId, int quantity)
+        {
+            OrderPlacementId = orderPlacementId;
+            SleeveId = sleeveId;
+            Quantity = quantity;
+        }
     }
 }

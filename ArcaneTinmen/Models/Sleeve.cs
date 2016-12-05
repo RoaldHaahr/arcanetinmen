@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ArcaneTinmen.Models
 {
     public class Sleeve
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string SleeveId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -17,6 +19,7 @@ namespace ArcaneTinmen.Models
         public double SalePrice { get; set; }
         [Required(ErrorMessage = "Please enter the amount of sleeves in stock")]
         public int StockAmount { get; set; }
+        // Active property to determine, whether to list a product
 
         public virtual ICollection<OrderLine> OrderLines { get; set; }
         public virtual ICollection<GameSleeve> GameSleeves { get; set; }

@@ -8,9 +8,10 @@ namespace ArcaneTinmen.Models
     {
         //[Key]
         //public int GameSleeveId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(Order = 0), Key]
         [Required]
-        public int SleeveId { get; set; }
+        public string SleeveId { get; set; }
         [Column(Order = 1), Key]
         [Required]
         public int GameId { get; set; }
@@ -20,7 +21,7 @@ namespace ArcaneTinmen.Models
 
         public GameSleeve() {}
 
-        public GameSleeve(int sleeveId, int gameId)
+        public GameSleeve(string sleeveId, int gameId)
         {
             SleeveId = sleeveId;
             GameId = gameId;
