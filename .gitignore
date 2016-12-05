@@ -76,5 +76,5 @@ _[Ss]cripts
 ######################
 DB
 ######################
-*.mdf
-*.ldf
+App_Data/*.mdf
+App_Data/*.ldf

@@ -21,10 +21,9 @@ namespace ArcaneTinmen.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            var customers = new List<Customer>
+            List<Customer> customers = new List<Customer>
             {
                 new Customer {
-                    CustomerId = 1,
                     Title = "Miss",
                     FirstName = "Hermione",
                     LastName = "Granger",
@@ -34,9 +33,54 @@ namespace ArcaneTinmen.Migrations
                     Email = "hermionegranger@mail.com",
                     Password = "123aBc",
                     ConfirmPassword = "123aBc"
+                },
+                new Customer {
+                    Title = "Mr.",
+                    FirstName = "Harry",
+                    LastName = "Potter",
+                    Address = "4 Privet Drive",
+                    Zip = 7878,
+                    Phone = 11668579,
+                    Email = "harrypotter@mail.com",
+                    Password = "456dEf",
+                    ConfirmPassword = "456dEf"
+                },
+                new Customer {
+                    Title = "Mr.",
+                    FirstName = "Ronald",
+                    LastName = "Weasly",
+                    Address = "The Buroow",
+                    Zip = 9638,
+                    Phone = 78549316,
+                    Email = "ronaldweasley@mail.com",
+                    Password = "789gHi",
+                    ConfirmPassword = "789gHi"
                 }
+
             };
             customers.ForEach(c => context.Customers.AddOrUpdate(c));
+            context.SaveChanges();
+
+            List<Sleeve> sleeves = new List<Sleeve>
+            {
+                new Sleeve
+                {
+                    Description = "Euro-games: Large cards",
+                    Height = 92,
+                    Width = 59,
+                    SalePrice = 100,
+                    StockAmount = 130
+                },
+                new Sleeve
+                {
+                    Description = "American games: Large cards",
+                    Height = 89,
+                    Width = 57,
+                    SalePrice = 100.12,
+                    StockAmount = 140
+                }
+            };
+            sleeves.ForEach(s => context.Sleeves.AddOrUpdate(s));
             context.SaveChanges();
         }
     }
