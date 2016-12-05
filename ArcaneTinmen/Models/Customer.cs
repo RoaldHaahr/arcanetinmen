@@ -21,10 +21,12 @@ namespace ArcaneTinmen.Models
         [RegularExpression(@"^([a-zA-Z]*\d*)*", ErrorMessage = "Your password must only consist of numbers and letters.")]
         [Required(ErrorMessage = "Please enter a password.")]
         [StringLength(12, MinimumLength = 6, ErrorMessage = "Your password must be between 6 and 12 characters long")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Compare("Password", ErrorMessage = "The passwords does not match.")]
         [Required(ErrorMessage = "Please confirm your password.")]
+        [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "Please enter your address")]
