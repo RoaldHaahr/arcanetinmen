@@ -6,7 +6,8 @@ namespace ArcaneTinmen.Models
     public class Sleeve
     {
         [Key]
-        public int SleeveId { get; set; }
+        public string SleeveId { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         [Required(ErrorMessage = "Please enter a height in millimeters")]
         public int Height { get; set; }
@@ -16,20 +17,19 @@ namespace ArcaneTinmen.Models
         public double SalePrice { get; set; }
         [Required(ErrorMessage = "Please enter the amount of sleeves in stock")]
         public int StockAmount { get; set; }
-        // Active property to determine, whether to list a product
 
         public virtual ICollection<OrderLine> OrderLines { get; set; }
         public virtual ICollection<GameSleeve> GameSleeves { get; set; }
 
         public Sleeve() {}
 
-        public Sleeve(int sleeveId, string description, int height, int width, decimal costPrice, decimal salePrice, int stockAmount)
+        public Sleeve(string sleeveId, string name, string description, int height, int width, double salePrice, int stockAmount)
         {
             SleeveId = sleeveId;
+            Name = name;
             Description = description;
             Height = height;
             Width = width;
-            CostPrice = costPrice;
             SalePrice = salePrice;
             StockAmount = stockAmount;
         }
