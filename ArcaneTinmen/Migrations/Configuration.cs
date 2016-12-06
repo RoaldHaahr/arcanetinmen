@@ -12,6 +12,7 @@ namespace ArcaneTinmen.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(ArcaneTinmen.DAL.ArcaneTinmenContext context)
@@ -85,6 +86,26 @@ namespace ArcaneTinmen.Migrations
                 }
             };
             sleeves.ForEach(s => context.Sleeves.AddOrUpdate(s));
+            context.SaveChanges();
+
+            List<Admin> admins = new List<Admin>
+            {
+                new Admin
+                {
+                    AdminId = 1,
+                    Username = "MasterChef",
+                    Password = "admin",
+                    Email = "Admin@adminsen.dk"
+                },
+                new Admin
+                {
+                    AdminId = 2,
+                    Username = "MinorAdmin",
+                    Password = "admin",
+                    Email = "Admin@adminson.dk"
+                }
+            };
+            admins.ForEach(a => context.Admins.AddOrUpdate(a));
             context.SaveChanges();
         }
     }

@@ -137,6 +137,11 @@
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
+    <None Include="scripts\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery.validate.js" />
+    <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -145,18 +150,15 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="DAL\ArcaneTinmenInitializer.cs" />
     <Compile Include="DAL\ArcaneTinmenContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612052221271_Initial.cs" />
-    <Compile Include="Migrations\201612052221271_Initial.Designer.cs">
-      <DependentUpon>201612052221271_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612052222072_Initial1.cs" />
-    <Compile Include="Migrations\201612052222072_Initial1.Designer.cs">
-      <DependentUpon>201612052222072_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\201612061900494_init.cs" />
+    <Compile Include="Migrations\201612061900494_init.Designer.cs">
+      <DependentUpon>201612061900494_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -184,6 +186,9 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\LoggedIn.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\LoggedIn.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -193,14 +198,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612052221271_Initial.resx">
-      <DependentUpon>201612052221271_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612052222072_Initial1.resx">
-      <DependentUpon>201612052222072_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612061900494_init.resx">
+      <DependentUpon>201612061900494_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

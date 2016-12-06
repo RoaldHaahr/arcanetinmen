@@ -6,12 +6,14 @@ namespace ArcaneTinmen.Models
     {
         [Key]
         public int AdminId { get; set; }
+        [Required(ErrorMessage = "Please enter a valid username")]
         public string Username { get; set; }
+        [Required(ErrorMessage = "Please enter a password.")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
-        [Required]
+        [RegularExpression(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,3}$", ErrorMessage = "Not a valid email")]
         public string Email { get; set; }
-
-        public Admin() {}
+        public Admin() { }
         public Admin(int adminId, string username, string password, string email)
         {
             AdminId = adminId;

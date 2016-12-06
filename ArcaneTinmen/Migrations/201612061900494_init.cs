@@ -12,9 +12,9 @@ namespace ArcaneTinmen.Migrations
                 c => new
                     {
                         AdminId = c.Int(nullable: false, identity: true),
-                        Username = c.String(),
-                        Password = c.String(),
-                        Email = c.String(nullable: false),
+                        Username = c.String(nullable: false),
+                        Password = c.String(nullable: false),
+                        Email = c.String(),
                     })
                 .PrimaryKey(t => t.AdminId);
             
