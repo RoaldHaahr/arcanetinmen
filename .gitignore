@@ -79,4 +79,4 @@ DB
 **/App_Data/*.mdf
 **/App_Data/*.ldf
 ######################
-/.vs
+.vs/
