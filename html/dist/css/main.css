@@ -1,0 +1,10 @@
+header {
+  overflow: auto;
+  zoom: 1;
+  background-color: #000000; }
+  header figure {
+    float: left; }
+  header h1 {
+    float: left; }
+  header nav {
+    float: right; }

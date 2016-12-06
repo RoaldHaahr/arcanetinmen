@@ -1,0 +1,16 @@
+$background-color: #000000;
+header {
+	overflow: auto;
+	zoom:1;
+	background-color:$background-color;
+	figure {
+		float: left;
+
+	}
+	h1 {
+		float: left;
+	}
+	nav {
+		float: right;
+	}
+}
