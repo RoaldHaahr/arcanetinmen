@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "CustomerLoggedIn";
+}
+
+@if (Session["CustomerId"] != null)
+{
+    <h4>Hello @Session["CustomerName"].ToString()</h4>
+}
+

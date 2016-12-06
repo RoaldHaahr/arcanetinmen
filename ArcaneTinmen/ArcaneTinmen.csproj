@@ -125,15 +125,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="DAL\ArcaneTinmenInitializer.cs" />
     <Compile Include="DAL\ArcaneTinmenContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -159,6 +170,14 @@
     <Compile Include="Migrations\201612041805296_migration5.Designer.cs">
       <DependentUpon>201612041805296_migration5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612052221271_Initial.cs" />
+    <Compile Include="Migrations\201612052221271_Initial.Designer.cs">
+      <DependentUpon>201612052221271_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612052222072_Initial1.cs" />
+    <Compile Include="Migrations\201612052222072_Initial1.Designer.cs">
+      <DependentUpon>201612052222072_Initial1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -175,6 +194,16 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\LoggedIn.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -184,7 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612021608121_InitialCreate.resx">
@@ -201,6 +230,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612041805296_migration5.resx">
       <DependentUpon>201612041805296_migration5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612052221271_Initial.resx">
+      <DependentUpon>201612052221271_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612052222072_Initial1.resx">
+      <DependentUpon>201612052222072_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
