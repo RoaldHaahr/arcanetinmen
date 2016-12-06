@@ -150,14 +150,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612052221271_Initial.cs" />
-    <Compile Include="Migrations\201612052221271_Initial.Designer.cs">
-      <DependentUpon>201612052221271_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612052222072_Initial1.cs" />
-    <Compile Include="Migrations\201612052222072_Initial1.Designer.cs">
-      <DependentUpon>201612052222072_Initial1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -194,14 +186,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Login\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612052221271_Initial.resx">
-      <DependentUpon>201612052221271_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612052222072_Initial1.resx">
-      <DependentUpon>201612052222072_Initial1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
