@@ -13,7 +13,7 @@ namespace ArcaneTinmen.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201612052221271_Initial"; }
+            get { return "201612061008163_Initial"; }
         }
         
         string IMigrationMetadata.Source

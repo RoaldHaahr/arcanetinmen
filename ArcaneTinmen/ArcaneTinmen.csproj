@@ -150,33 +150,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612021608121_InitialCreate.cs" />
-    <Compile Include="Migrations\201612021608121_InitialCreate.Designer.cs">
-      <DependentUpon>201612021608121_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201612061007147_init.cs" />
+    <Compile Include="Migrations\201612061007147_init.Designer.cs">
+      <DependentUpon>201612061007147_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612022211091_migration2.cs" />
-    <Compile Include="Migrations\201612022211091_migration2.Designer.cs">
-      <DependentUpon>201612022211091_migration2.cs</DependentUpon>
+    <Compile Include="Migrations\201612061008163_Initial.cs" />
+    <Compile Include="Migrations\201612061008163_Initial.Designer.cs">
+      <DependentUpon>201612061008163_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612041740038_migration3.cs" />
-    <Compile Include="Migrations\201612041740038_migration3.Designer.cs">
-      <DependentUpon>201612041740038_migration3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612041802159_migration4.cs" />
-    <Compile Include="Migrations\201612041802159_migration4.Designer.cs">
-      <DependentUpon>201612041802159_migration4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612041805296_migration5.cs" />
-    <Compile Include="Migrations\201612041805296_migration5.Designer.cs">
-      <DependentUpon>201612041805296_migration5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612052221271_Initial.cs" />
-    <Compile Include="Migrations\201612052221271_Initial.Designer.cs">
-      <DependentUpon>201612052221271_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612052222072_Initial1.cs" />
-    <Compile Include="Migrations\201612052222072_Initial1.Designer.cs">
-      <DependentUpon>201612052222072_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\201612061052523_DeleteConfirmPassword.cs" />
+    <Compile Include="Migrations\201612061052523_DeleteConfirmPassword.Designer.cs">
+      <DependentUpon>201612061052523_DeleteConfirmPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -216,26 +200,14 @@
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612021608121_InitialCreate.resx">
-      <DependentUpon>201612021608121_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612061007147_init.resx">
+      <DependentUpon>201612061007147_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612022211091_migration2.resx">
-      <DependentUpon>201612022211091_migration2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612061008163_Initial.resx">
+      <DependentUpon>201612061008163_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612041740038_migration3.resx">
-      <DependentUpon>201612041740038_migration3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612041802159_migration4.resx">
-      <DependentUpon>201612041802159_migration4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612041805296_migration5.resx">
-      <DependentUpon>201612041805296_migration5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612052221271_Initial.resx">
-      <DependentUpon>201612052221271_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612052222072_Initial1.resx">
-      <DependentUpon>201612052222072_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612061052523_DeleteConfirmPassword.resx">
+      <DependentUpon>201612061052523_DeleteConfirmPassword.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
