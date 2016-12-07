@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ArcaneTinmen.Models
 {
@@ -27,6 +28,7 @@ namespace ArcaneTinmen.Models
         [Compare("Password", ErrorMessage = "The passwords does not match.")]
         [Required(ErrorMessage = "Please confirm your password.")]
         [DataType(DataType.Password)]
+        [NotMapped]
         public string ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "Please enter your address")]

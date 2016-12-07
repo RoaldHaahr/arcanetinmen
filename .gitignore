@@ -80,3 +80,5 @@ DB
 **/App_Data/*.ldf
 ######################
 .vs/
+**/Migrations/*.cs
+!**/Migrations/Configuration.cs
