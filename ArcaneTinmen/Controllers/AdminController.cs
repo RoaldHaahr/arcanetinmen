@@ -23,14 +23,14 @@ namespace ArcaneTinmen.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(Admin account)
+        public ActionResult Login(Admin admin)
         {
             using (ArcaneTinmenContext db = new ArcaneTinmenContext())
             {
-                var admn = db.Admins.Single(a => a.Username == account.Username && a.Password == account.Password);
+                var admn = db.Admins.Single(a => a.Username == admin.Username && a.Password == admin.Password);
                 if (admn != null)
                 {
-                    Session["AdminId"] = account.AdminId.ToString();
+                    Session["AdminId"] = admin.AdminId.ToString();
                     Session["AdminUserName"] = admn.Username.ToString();
                     return RedirectToAction("LoggedIn");
                 }
