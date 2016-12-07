@@ -202,14 +202,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612061900494_init.resx">
       <DependentUpon>201612061900494_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-=======
->>>>>>> d7dacbfbb74ce07ad9ae2b80e15ea29b63d92e30
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
