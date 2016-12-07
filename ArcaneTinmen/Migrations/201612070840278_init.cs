@@ -3,7 +3,7 @@ namespace ArcaneTinmen.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migration2 : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -14,9 +14,26 @@ namespace ArcaneTinmen.Migrations
                         AdminId = c.Int(nullable: false, identity: true),
                         Username = c.String(),
                         Password = c.String(),
-                        Email = c.String(),
+                        Email = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.AdminId);
+            
+            CreateTable(
+                "dbo.Customer",
+                c => new
+                    {
+                        CustomerId = c.Int(nullable: false, identity: true),
+                        Title = c.String(),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        Password = c.String(nullable: false, maxLength: 12),
+                        ConfirmPassword = c.String(nullable: false),
+                        Address = c.String(nullable: false),
+                        Zip = c.Int(nullable: false),
+                        Phone = c.Int(nullable: false),
+                        Email = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.CustomerId);
             
             CreateTable(
                 "dbo.OrderPlacement",
@@ -24,8 +41,8 @@ namespace ArcaneTinmen.Migrations
                     {
                         OrderPlacementId = c.Int(nullable: false, identity: true),
                         CustomerId = c.Int(nullable: false),
-                        DatePlaced = c.DateTime(nullable: false),
-                        DateShipped = c.DateTime(nullable: false),
+                        DatePlaced = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        DateShipped = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         TotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.OrderPlacementId)
@@ -38,7 +55,7 @@ namespace ArcaneTinmen.Migrations
                     {
                         OrderLineId = c.Int(nullable: false, identity: true),
                         OrderPlacementId = c.Int(nullable: false),
-                        SleeveId = c.Int(nullable: false),
+                        SleeveId = c.String(nullable: false, maxLength: 128),
                         Quantity = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.OrderLineId)
@@ -51,12 +68,12 @@ namespace ArcaneTinmen.Migrations
                 "dbo.Sleeve",
                 c => new
                     {
-                        SleeveId = c.Int(nullable: false, identity: true),
+                        SleeveId = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(),
                         Description = c.String(),
                         Height = c.Int(nullable: false),
                         Width = c.Int(nullable: false),
-                        CostPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        SalePrice = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        SalePrice = c.Double(nullable: false),
                         StockAmount = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.SleeveId);
@@ -65,11 +82,10 @@ namespace ArcaneTinmen.Migrations
                 "dbo.GameSleeve",
                 c => new
                     {
-                        GameSleeveId = c.Int(nullable: false, identity: true),
-                        SleeveId = c.Int(nullable: false),
+                        SleeveId = c.String(nullable: false, maxLength: 128),
                         GameId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.GameSleeveId)
+                .PrimaryKey(t => new { t.SleeveId, t.GameId })
                 .ForeignKey("dbo.Game", t => t.GameId, cascadeDelete: true)
                 .ForeignKey("dbo.Sleeve", t => t.SleeveId, cascadeDelete: true)
                 .Index(t => t.SleeveId)
@@ -80,7 +96,7 @@ namespace ArcaneTinmen.Migrations
                 c => new
                     {
                         GameId = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.GameId);
             
@@ -103,6 +119,7 @@ namespace ArcaneTinmen.Migrations
             DropTable("dbo.Sleeve");
             DropTable("dbo.OrderLine");
             DropTable("dbo.OrderPlacement");
+            DropTable("dbo.Customer");
             DropTable("dbo.Admin");
         }
     }
