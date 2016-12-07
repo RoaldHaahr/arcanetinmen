@@ -1,11 +1,11 @@
-$background-color: #000000;
+$background-color: #242424;
 header {
 	position: relative;
 	padding: 12px;
-	overflow: auto;
-	zoom:1;
 	background-color:$background-color;
 	height: 150px;
+	overflow: auto;
+	zoom: 1;
 	figure {
 		float: left;
 		img {

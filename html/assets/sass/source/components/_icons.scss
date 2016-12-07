@@ -1,0 +1,9 @@
+.icon {
+	display: inline-block;
+	height: 1.857142857142857em;
+	width: 1.857142857142857em;
+	background-size: 100%;
+	&.icon-search {
+		background-image: url('../img/icons/icon-search.png');
+	}
+}

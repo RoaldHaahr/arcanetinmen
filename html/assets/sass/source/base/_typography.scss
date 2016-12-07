@@ -1,3 +1,12 @@
+@font-face {
+	font-family: Kiye;
+	src: url('../fonts/Kiye-Sans.ttf');
+}
+@font-face {
+	font-family: Osaka;
+	src: url('../fonts/Osaka.ttf');
+}
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Kiye', sans-serif;
+	font-size: 14px;
 }
