@@ -93,7 +93,6 @@ body {
 
 header {
   position: relative;
-  padding: 12px;
   background-color: #242424;
   height: 150px;
   overflow: auto;
@@ -138,3 +137,13 @@ nav ul li {
 .search-form {
   margin: 0 auto;
   width: 690px; }
+
+section .sleeves {
+  text-align: center; }
+  section .sleeves .sleeve {
+    display: inline-block;
+    margin-right: -100px; }
+    section .sleeves .sleeve:last-child {
+      margin-right: 0; }
+    section .sleeves .sleeve > div {
+      display: inline-block; }
