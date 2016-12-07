@@ -4,11 +4,12 @@
 	h2 {
 		margin-bottom: 36px;
 		color: $white;
-		text-shadow:
-		   -3px -3px 0 $dark-grey,  
-		    3px -3px 0 $dark-grey,
-		    -3px 3px 0 $dark-grey,
-		     3px 3px 0 $dark-grey;
+		// text-shadow:
+		//    -3px -3px 0 $dark-grey,  
+		//     3px -3px 0 $dark-grey,
+		//     -3px 3px 0 $dark-grey,
+		//      3px 3px 0 $dark-grey;
+		@include text-border(3px, $dark-grey);
 		font-weight: 900;
 		text-align: center;
 	}
