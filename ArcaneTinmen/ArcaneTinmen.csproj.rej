@@ -1,0 +1,9 @@
+diff a/ArcaneTinmen/ArcaneTinmen.csproj b/ArcaneTinmen/ArcaneTinmen.csproj	(rejected hunks)
+@@ -156,6 +156,7 @@
+     <Compile Include="Global.asax.cs">
+       <DependentUpon>Global.asax</DependentUpon>
+     </Compile>
+<<<<<<< HEAD
+     <Compile Include="Migrations\201612061900494_init.cs" />
+     <Compile Include="Migrations\201612061900494_init.Designer.cs">
+       <DependentUpon>201612061900494_init.cs</DependentUpon>

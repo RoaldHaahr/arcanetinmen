@@ -50,7 +50,7 @@ table {
 
 body {
   padding: 0;
-  background: url("../img/background.jpg");
+  background: url("../img/background.jpg") rgba(0, 0, 0, 0.6);
   background-size: 100%; }
 
 @font-face {
@@ -65,13 +65,32 @@ body {
   font-family: 'Kiye', sans-serif;
   font-size: 14px; }
 
+*::-webkit-input-placeholder {
+  color: #FFFFFF; }
+
+*::-moz-placeholder {
+  color: #FFFFFF;
+  opacity: 1; }
+
+*:-moz-placeholder {
+  color: #FFFFFF;
+  opacity: 1; }
+
+*:-ms-input-placeholder {
+  color: #FFFFFF; }
+
+:placeholder-shown {
+  color: #FFFFFF;
+  opacity: 1; }
+
 .input-field > input {
   padding: 1em;
   width: 690px;
   height: 50px;
   background-color: #242424;
+  background-repeat: no-repeat;
   color: #fff;
-  font-size: 1.857142857142857em;
+  font-size: 2.095238666666667em;
   border: 3px solid #FFF; }
 
 .input-field-search {
@@ -79,40 +98,50 @@ body {
   .input-field-search > .icon-search {
     position: absolute;
     top: 1em;
-    left: 90px; }
+    left: 110px;
+    height: 2.095238666666667em;
+    width: 2.095238666666667em; }
   .input-field-search input {
-    padding-left: 120px; }
+    padding-left: 150px; }
+
+h1 {
+  font-size: 3.9285725em; }
+
+h2 {
+  font-size: 3.9285725em; }
 
 .icon {
   display: inline-block;
-  height: 1.857142857142857em;
-  width: 1.857142857142857em;
+  height: 1em;
+  width: 1em;
   background-size: 100%; }
   .icon.icon-search {
     background-image: url("../img/icons/icon-search.png"); }
 
+.section-divider {
+  font-size: 3.9285725em;
+  color: #FFFFFF;
+  text-shadow: -1px -1px 0 #242424, 1px -1px 0 #242424, -1px 1px 0 #242424, 1px 1px 0 #242424;
+  font-weight: 900;
+  text-align: center; }
+
 header {
   position: relative;
-  padding: 12px;
-  background-color: #242424;
-  height: 150px;
-  overflow: auto;
-  zoom: 1; }
+  padding: 10px;
+  background-color: #242424; }
   header figure {
-    float: left; }
+    display: inline-block;
+    height: 160px; }
     header figure img {
-      position: relative;
-      top: -5px;
-      left: -5px;
-      border: 1px solid #fff; }
+      max-height: 100%; }
   header .page-title {
-    float: left;
+    display: inline-block;
     position: relative;
     height: 100%;
     width: 600px; }
   header h1 {
     position: absolute;
-    bottom: 0;
+    bottom: 17px;
     color: #fff;
     text-transform: uppercase;
     font-size: 50px; }
@@ -123,9 +152,9 @@ header {
 
 nav ul li {
   display: inline-block;
-  padding: 0 40px; }
+  padding: 0 31px; }
   nav ul li a {
-    padding: 12px 0;
+    padding: 12px;
     color: #fff;
     font-size: 1.571429em;
     text-decoration: none;
@@ -138,3 +167,13 @@ nav ul li {
 .search-form {
   margin: 0 auto;
   width: 690px; }
+  .search-form h2 {
+    margin-bottom: 36px;
+    color: #FFFFFF;
+    text-shadow: -3px -3px 0 #242424, 3px -3px 0 #242424, -3px 3px 0 #242424, 3px 3px 0 #242424;
+    font-weight: 900;
+    text-align: center; }
+
+.search-form {
+  margin-top: 90px;
+  margin-bottom: 36px; }
