@@ -16,7 +16,7 @@ namespace ArcaneTinmen.Models
         [Required(ErrorMessage = "Please enter a width in millimeters")]
         public int Width { get; set; }
         [Required(ErrorMessage = "Please enter the price for the sleeve")]
-        public double SalePrice { get; set; }
+        public decimal SalePrice { get; set; }
         [Required(ErrorMessage = "Please enter the amount of sleeves in stock")]
         public int StockAmount { get; set; }
         // Active property to determine, whether to list a product
@@ -26,7 +26,13 @@ namespace ArcaneTinmen.Models
 
         public Sleeve() {}
 
-        public Sleeve(string sleeveId, string name, string description, int height, int width, double salePrice, int stockAmount)
+        public Sleeve(string name, decimal saleprice)
+        {
+            Name = name;
+            SalePrice = saleprice;
+        }
+
+        public Sleeve(string sleeveId, string name, string description, int height, int width, decimal salePrice, int stockAmount)
         {
             SleeveId = sleeveId;
             Name = name;

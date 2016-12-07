@@ -24,7 +24,7 @@ namespace ArcaneTinmen.Migrations
 
             List<Customer> customers = new List<Customer>
             {
-<<<<<<< HEAD
+
             new Customer
             {
                 Title = "Miss",
@@ -37,9 +37,7 @@ namespace ArcaneTinmen.Migrations
                 Password = "123aBc",
                 ConfirmPassword = "123aBc"
             },
-                new Customer
-                {
-=======
+
                 new Customer {
                     Title = "Miss",
                     FirstName = "Hermione",
@@ -52,7 +50,7 @@ namespace ArcaneTinmen.Migrations
                     ConfirmPassword = "123aBc"
                 },
                 new Customer {
->>>>>>> frontend
+
                     Title = "Mr.",
                     FirstName = "Harry",
                     LastName = "Potter",
@@ -63,12 +61,9 @@ namespace ArcaneTinmen.Migrations
                     Password = "456dEf",
                     ConfirmPassword = "456dEf"
                 },
-<<<<<<< HEAD
-                new Customer
-                {
-=======
+
                 new Customer {
->>>>>>> frontend
+
                     Title = "Mr.",
                     FirstName = "Ronald",
                     LastName = "Weasly",
@@ -103,7 +98,7 @@ namespace ArcaneTinmen.Migrations
                     Description = "American games: Large cards",
                     Height = 89,
                     Width = 57,
-                    SalePrice = 100.12,
+                    SalePrice = 100,
                     StockAmount = 140
                 }
             };
