@@ -156,7 +156,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Migrations\201612061900494_init.cs" />
     <Compile Include="Migrations\201612061900494_init.Designer.cs">
       <DependentUpon>201612061900494_init.cs</DependentUpon>
@@ -172,11 +171,8 @@
     <Compile Include="Migrations\201612070944044_init3.cs" />
     <Compile Include="Migrations\201612070944044_init3.Designer.cs">
       <DependentUpon>201612070944044_init3.cs</DependentUpon>
-=======
-    <Compile Include="Migrations\201612070840278_init.cs" />
-    <Compile Include="Migrations\201612070840278_init.Designer.cs">
-      <DependentUpon>201612070840278_init.cs</DependentUpon>
->>>>>>> frontend
+
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -218,7 +214,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+
     <EmbeddedResource Include="Migrations\201612061900494_init.resx">
       <DependentUpon>201612061900494_init.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,10 +226,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612070944044_init3.resx">
       <DependentUpon>201612070944044_init3.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Migrations\201612070840278_init.resx">
-      <DependentUpon>201612070840278_init.cs</DependentUpon>
->>>>>>> frontend
+
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
