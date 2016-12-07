@@ -24,6 +24,7 @@ namespace ArcaneTinmen.Migrations
 
             List<Customer> customers = new List<Customer>
             {
+<<<<<<< HEAD
             new Customer
             {
                 Title = "Miss",
@@ -38,6 +39,20 @@ namespace ArcaneTinmen.Migrations
             },
                 new Customer
                 {
+=======
+                new Customer {
+                    Title = "Miss",
+                    FirstName = "Hermione",
+                    LastName = "Granger",
+                    Address = "Bakers Street 133",
+                    Zip = 5489,
+                    Phone = 66779922,
+                    Email = "hermionegranger@mail.com",
+                    Password = "123aBc",
+                    ConfirmPassword = "123aBc"
+                },
+                new Customer {
+>>>>>>> frontend
                     Title = "Mr.",
                     FirstName = "Harry",
                     LastName = "Potter",
@@ -48,8 +63,12 @@ namespace ArcaneTinmen.Migrations
                     Password = "456dEf",
                     ConfirmPassword = "456dEf"
                 },
+<<<<<<< HEAD
                 new Customer
                 {
+=======
+                new Customer {
+>>>>>>> frontend
                     Title = "Mr.",
                     FirstName = "Ronald",
                     LastName = "Weasly",
