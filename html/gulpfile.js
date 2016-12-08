@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 
 var paths = {
     styles: 'assets/sass/source/**/*.scss',
-    cssDest: 'dist/css'
+    cssDest: '../ArcaneTinmen/dist/css'
 };
 
 gulp.task('styles', function() {

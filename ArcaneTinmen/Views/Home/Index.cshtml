@@ -5,12 +5,26 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<section class="form-search">
+    <form action="index_submit" method="get" accept-charset="utf-8">
+        <h2>Find Your Fit</h2>
+        <div class="input-field input-field-search">
+            <span class="icon icon-search"></span>
+            <input type="search" name="Search Sleeves" placeholder="Insert Board Game Name ...">
+        </div>
+    </form>
+</section>
+<p class="section-divider">or</p>
+<section class="sleeves-section">
+    <h2>Pick Your Sleeve</h2>
+    <div class="sleeves-container">
+        <div class="sleeves">
+            @foreach (Sleeve sleeve in Model.Sleeves.ToList())
+            {
+                @Html.Partial("SleeveSummary", sleeve);
+            }
+        </div>
+    </div>
+</section>
 
-
-@foreach (Sleeve sleeve in Model.Sleeves.ToList())
-{
-    @Html.Partial("SleeveSummary", sleeve);
-    <br />
-}
 
