@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 
-@foreach (Sleeve sleeve in Model.Sleeve.ToList())
+@foreach (Sleeve sleeve in Model.Sleeves.ToList())
 {
     @Html.Partial("SleeveSummary", sleeve);
     <br />

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ArcaneTinmen.DAL;
+using ArcaneTinmen.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,17 @@ namespace ArcaneTinmen.Controllers
 {
     public class HomeController : Controller
     {
+        private ArcaneTinmenContext db;
+
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            db = new ArcaneTinmenContext();
+            SleeveListViewModel model = new SleeveListViewModel
+            {
+                Sleeves = db.Sleeves.ToList()
+            };
+            return View(model);
         }
     }
 }

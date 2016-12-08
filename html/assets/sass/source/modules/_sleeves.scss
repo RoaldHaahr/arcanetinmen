@@ -1,5 +1,14 @@
 .sleeves-section {
+	position: absolute;
+	bottom: -200px;
 	text-align: center;
+	width: 100%;
+	> div.sleeves-container {
+		display: inline-block;
+		.sleeves {
+			display: inline-block;
+		}
+	}
 	h2 {
 		text-align: center;
 		color: $white;
@@ -7,16 +16,13 @@
 		font-weight: 900;
 		@include text-border(3px, $dark-grey);
 	}
-	.sleeves {
-		display: inline-block;
-	}
 }
 .sleeve {
 	text-align: center;
 	float: left;
 	position: relative;
 	top: 0;
-	margin-right: -80px;
+	margin-right: -50px;
 	background-color: rgba(255,255,255,.6);
 	padding: 4px;
 	border-left-width: 1px;
@@ -40,15 +46,15 @@
 		border: 10px solid $white;
 		border-radius: 20px;
 		h3 {
-			margin-top: 48px;
+			margin-top: 24px;
 			font-weight: 900;
 			color: $white;
 			font-size: 1.801905253333333em;
 			@include text-border(2px, $dark-grey);		
 		}
 		img {
-			margin-top: 24px;
-			width: 110px;
+			margin-top: 12px;
+			width: 90px;
 			height: auto;
 		}
 	}

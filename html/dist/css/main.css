@@ -48,6 +48,10 @@ table {
 * {
   box-sizing: border-box; }
 
+html, body {
+  height: 100%;
+  overflow: hidden; }
+
 body {
   padding: 0;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/background.jpg");
@@ -175,22 +179,27 @@ nav ul li {
     text-align: center; }
 
 .sleeves-section {
-  text-align: center; }
+  position: absolute;
+  bottom: -200px;
+  text-align: center;
+  width: 100%; }
+  .sleeves-section > div.sleeves-container {
+    display: inline-block; }
+    .sleeves-section > div.sleeves-container .sleeves {
+      display: inline-block; }
   .sleeves-section h2 {
     text-align: center;
     color: #FFFFFF;
     margin-bottom: 50px;
     font-weight: 900;
     text-shadow: -3px -3px 0 #242424, 3px -3px 0 #242424, -3px 3px 0 #242424, 3px 3px 0 #242424, 0 3px #242424, 3px 0 #242424, 0 -3px #242424, -3px 0 #242424; }
-  .sleeves-section .sleeves {
-    display: inline-block; }
 
 .sleeve {
   text-align: center;
   float: left;
   position: relative;
   top: 0;
-  margin-right: -80px;
+  margin-right: -50px;
   background-color: rgba(255, 255, 255, 0.6);
   padding: 4px;
   border-left-width: 1px;
@@ -212,24 +221,53 @@ nav ul li {
     border: 10px solid #FFFFFF;
     border-radius: 20px; }
     .sleeve > .card h3 {
-      margin-top: 48px;
+      margin-top: 24px;
       font-weight: 900;
       color: #FFFFFF;
       font-size: 1.801905253333333em;
       text-shadow: -2px -2px 0 #242424, 2px -2px 0 #242424, -2px 2px 0 #242424, 2px 2px 0 #242424, 0 2px #242424, 2px 0 #242424, 0 -2px #242424, -2px 0 #242424; }
     .sleeve > .card img {
-      margin-top: 24px;
-      width: 110px;
+      margin-top: 12px;
+      width: 90px;
       height: auto; }
 
 .sleeve-preview {
+  display: table;
   margin: 0 auto;
   padding: 60px;
-  width: 1366px;
-  max-width: 100%; }
+  width: auto;
+  max-width: 100%;
+  overflow: auto; }
   .sleeve-preview .sleeve {
-    display: inline-block;
+    display: table-cell;
+    margin-right: 50px;
     float: none; }
+    .sleeve-preview .sleeve:hover {
+      top: 0; }
+  .sleeve-preview .sleeve-info-container {
+    display: table-cell;
+    padding-left: 50px;
+    width: 300px;
+    height: 100%;
+    vertical-align: middle; }
+    .sleeve-preview .sleeve-info-container .sleeve-info {
+      display: inline-block;
+      padding: 12px;
+      background-color: #c8c8c8;
+      border-radius: 5px; }
+      .sleeve-preview .sleeve-info-container .sleeve-info > div {
+        padding: 12px;
+        border: 1px solid #0772BA;
+        border-radius: 5px; }
+        .sleeve-preview .sleeve-info-container .sleeve-info > div h4 {
+          font-size: 1.3em;
+          display: block;
+          margin-bottom: 0px;
+          font-weight: 900; }
+        .sleeve-preview .sleeve-info-container .sleeve-info > div p {
+          margin-bottom: 12px; }
+          .sleeve-preview .sleeve-info-container .sleeve-info > div p:last-child {
+            margin-bottom: 0; }
 
 .search-form {
   margin-top: 90px;

@@ -6,6 +6,6 @@ namespace ArcaneTinmen.ViewModels
 {
     public class SleeveListViewModel
     {
-        public IEnumerable<Sleeve> Sleeve { get; set; }
+        public IEnumerable<Sleeve> Sleeves { get; set; }
     }
 }

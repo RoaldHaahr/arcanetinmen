@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html>
-	<head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-		<title>Board Game Sleeves</title>
-		<link rel="stylesheet" href="dist/css/main.css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	</head>
-	<body>
-		<header>
-			<figure>
-				<img src="dist/img/logo.svg" alt="Logo">		
-			</figure>
-			<div class="page-title">
-				<h1>Board Game Sleeves</h1>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<title>Board Game Sleeves</title>
+	<link rel="stylesheet" href="dist/css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<figure>
+			<img src="dist/img/logo.svg" alt="Logo">		
+		</figure>
+		<div class="page-title">
+			<h1>Board Game Sleeves</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#" title="">Buy Sleeves</a></li>
+				<li><a href="#" title="">About</a></li>
+				<li><a href="#" title="">Contact</a></li>
+				<li><a href="#" title="">Cart</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<form class="search-form" action="index_submit" method="get" accept-charset="utf-8">
+			<h2>Find Your Fit</h2>
+			<div class="input-field input-field-search">
+				<span class="icon icon-search"></span>
+				<input type="search" name="Search Sleeves" placeholder="Insert Board Game Name ...">	
 			</div>
-			<nav>
-				<ul>
-					<li><a href="#" title="">Buy Sleeves</a></li>
-					<li><a href="#" title="">About</a></li>
-					<li><a href="#" title="">Contact</a></li>
-					<li><a href="#" title="">Cart</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<form class="search-form" action="index_submit" method="get" accept-charset="utf-8">
-				<h2>Find Your Fit</h2>
-				<div class="input-field input-field-search">
-					<span class="icon icon-search"></span>
-					<input type="search" name="Search Sleeves" placeholder="Insert Board Game Name ...">	
-				</div>
-			</form>
-			<p class="section-divider">or</p>
-			<section class="sleeves-section">
-				<h2>Pick Your Sleeve</h2>
+		</form>
+		<p class="section-divider">or</p>
+		<section class="sleeves-section">
+			<h2>Pick Your Sleeve</h2>
+			<div class="sleeves-container">
+				
 				<div class="sleeves">
 					<a href="#" class="sleeve" style="transform: rotate(-17.5deg) translateY(60px);">
 						<div class="card" style="background-image: url('dist/img/sleeves/mini_card.svg');width: calc(3.779528 * 41px); height: calc(3.779528 * 63px);">
@@ -102,7 +104,8 @@
 						</div>
 					</a>				
 				</div>
-			</section>
-		</main>
-	</body>
+			</div>
+		</section>
+	</main>
+</body>
 </html>
