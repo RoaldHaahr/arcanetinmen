@@ -1,10 +1,10 @@
 ﻿@model ArcaneTinmen.Models.Admin
 
 <section class="form-login">
+    <h2>Login</h2>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        <h4>Admin</h4>
         @Html.ValidationSummary(true)
         <div class="input-field">
             @Html.LabelFor(model => model.Username)
@@ -25,15 +25,6 @@
         <div class="form-submit">
             <input type="submit" value="Login" class="btn btn-default" />
         </div>
-
-        @*<dl>
-            <dt>@Html.LabelFor(model => model.Username)</dt>
-            <dd>@Html.EditorFor(model => model.Username)
-            @Html.ValidationMessageFor(model => model.Username)</dd>
-            <dt>@Html.LabelFor(model => model.Password)</dt>
-            <dd>@Html.EditorFor(model => model.Password)
-            @Html.ValidationMessageFor(model => model.Password, "")</dd>
-        </dl>*@
     }
 </section>
 

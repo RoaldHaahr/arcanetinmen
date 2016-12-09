@@ -1,0 +1,48 @@
+.section {
+	&.section-table {
+		display: table;
+		margin: 0 auto;
+		padding: 1em;
+		background-color: white;
+		border-radius: 10px;
+		p {
+			padding-left: 1em;
+			margin-bottom: 1em;
+			.link {
+
+			}
+		}
+		.table {
+			padding: 1em;
+			border: 1px solid $blue;
+			border-radius: 10px;
+			table {
+
+				tbody {
+					tr {
+						th {
+							padding: 4px 6px;
+							font-weight: 900;
+							text-align: left;
+							&:first-child {
+								padding-left: 0;
+							}
+							&:last-child {
+								padding-right: 0;
+							}
+						}
+						td {
+							padding: 4px 6px;
+							&:first-child {
+								padding-left: 0;
+							}
+							&:last-child {
+								padding-right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

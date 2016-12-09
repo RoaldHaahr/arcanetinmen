@@ -1,7 +1,18 @@
 h1 {
 	font-size: 3.9285725em;
+	@include text-border(3px, $dark-grey);
+	color: $white;
 }
 
 h2 {
 	font-size: 3.9285725em;
+	@include text-border(3px, $dark-grey);
+	color: $white;
+}
+
+h3 {
+	font-weight: 900;
+	color: $white;
+	font-size: 1.801905253333333em;
+	@include text-border(2px, $dark-grey);
 }

@@ -20,10 +20,10 @@
 </div>*@
 @*style="transform: rotate(-12.5deg) translateY(35px)"*@
 <a href="#" class="sleeve" data-name="@Model.Name" date-description="@Model.Description" data-width="@Model.Width" data-height="@Model.Height">
-    <div class="card" style="background-image: url('~/dist/img/sleeves/s_card.svg'); width: calc(3.779528 * @(Model.Width)px); height: calc(3.779528 * @(Model.Height)px);">
+    <div class="card" style="background-image: url('/dist/img/sleeves/@Model.CardImageFileName'); width: calc(3.779528 * @(Model.Width)px); height: calc(3.779528 * @(Model.Height)px);">
         <h3>
             @Model.Name
         </h3>
-        <img src="~/dist/img/sleeves/s_badge.svg" alt="Small">
+        <img src="~/dist/img/sleeves/@Model.BadgeImageFileName" alt="Small">
     </div>
 </a>

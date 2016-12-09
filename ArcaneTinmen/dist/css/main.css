@@ -67,7 +67,11 @@ body {
 
 body {
   font-family: 'Kiye', sans-serif;
-  font-size: 14px; }
+  font-size: 15px; }
+
+.clearfix, form > div.form-h .input-field {
+  overflow: auto;
+  zoom: 1; }
 
 *::-webkit-input-placeholder {
   color: #FFFFFF; }
@@ -117,10 +121,20 @@ body {
   font-family: Kiye; }
 
 h1 {
-  font-size: 3.9285725em; }
+  font-size: 3.9285725em;
+  text-shadow: -3px -3px 0 #242424, 3px -3px 0 #242424, -3px 3px 0 #242424, 3px 3px 0 #242424, 0 3px #242424, 3px 0 #242424, 0 -3px #242424, -3px 0 #242424;
+  color: #FFFFFF; }
 
 h2 {
-  font-size: 3.9285725em; }
+  font-size: 3.9285725em;
+  text-shadow: -3px -3px 0 #242424, 3px -3px 0 #242424, -3px 3px 0 #242424, 3px 3px 0 #242424, 0 3px #242424, 3px 0 #242424, 0 -3px #242424, -3px 0 #242424;
+  color: #FFFFFF; }
+
+h3 {
+  font-weight: 900;
+  color: #FFFFFF;
+  font-size: 1.801905253333333em;
+  text-shadow: -2px -2px 0 #242424, 2px -2px 0 #242424, -2px 2px 0 #242424, 2px 2px 0 #242424, 0 2px #242424, 2px 0 #242424, 0 -2px #242424, -2px 0 #242424; }
 
 .icon {
   display: inline-block;
@@ -176,24 +190,44 @@ nav ul li {
     nav ul li a:hover {
       border-bottom: 3px solid #0772BA; }
 
-.form-search form {
-  margin: 0 auto;
-  width: 690px; }
-  .form-search form h2 {
-    margin-bottom: 36px;
-    color: #FFFFFF;
-    text-shadow: -3px -3px 0 #242424, 3px -3px 0 #242424, -3px 3px 0 #242424, 3px 3px 0 #242424, 0 3px #242424, 3px 0 #242424, 0 -3px #242424, -3px 0 #242424;
-    font-weight: 900;
-    text-align: center; }
+.form-search {
+  margin-top: 60px; }
+  .form-search form {
+    margin: 0 auto;
+    width: 690px; }
+    .form-search form h2 {
+      margin-bottom: 36px;
+      text-align: center; }
 
-.form-login form {
-  width: 400px;
-  margin: 0 auto; }
-  .form-login form .input-field {
-    text-align: center;
-    margin-bottom: 12px; }
-    .form-login form .input-field > div {
-      margin-top: 4px; }
+.form-login {
+  margin-top: 60px;
+  text-align: center; }
+  .form-login h2 {
+    margin-bottom: 60px; }
+  .form-login form {
+    width: 400px;
+    margin: 0 auto; }
+    .form-login form .input-field {
+      margin-bottom: 12px; }
+      .form-login form .input-field > div {
+        margin-top: 4px; }
+
+.form-create {
+  width: 690px;
+  margin: 60px auto 0; }
+  .form-create .input-field {
+    margin: 6px 0; }
+
+form > div.form-h .input-field label {
+  padding: .5em;
+  display: block;
+  width: 30%;
+  float: left; }
+
+form > div.form-h .input-field > div {
+  display: block;
+  width: 70%;
+  float: left; }
 
 .sleeves-section {
   position: absolute;
@@ -238,11 +272,7 @@ nav ul li {
     border: 10px solid #FFFFFF;
     border-radius: 20px; }
     .sleeve > .card h3 {
-      margin-top: 24px;
-      font-weight: 900;
-      color: #FFFFFF;
-      font-size: 1.801905253333333em;
-      text-shadow: -2px -2px 0 #242424, 2px -2px 0 #242424, -2px 2px 0 #242424, 2px 2px 0 #242424, 0 2px #242424, 2px 0 #242424, 0 -2px #242424, -2px 0 #242424; }
+      margin-top: 24px; }
     .sleeve > .card img {
       margin-top: 12px;
       width: 90px;
@@ -285,6 +315,34 @@ nav ul li {
           margin-bottom: 12px; }
           .sleeve-preview .sleeve-info-container .sleeve-info > div p:last-child {
             margin-bottom: 0; }
+
+.section.section-table {
+  display: table;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: white;
+  border-radius: 10px; }
+  .section.section-table p {
+    padding-left: 1em;
+    margin-bottom: 1em; }
+  .section.section-table .table {
+    padding: 1em;
+    border: 1px solid #0772BA;
+    border-radius: 10px; }
+    .section.section-table .table table tbody tr th {
+      padding: 4px 6px;
+      font-weight: 900;
+      text-align: left; }
+      .section.section-table .table table tbody tr th:first-child {
+        padding-left: 0; }
+      .section.section-table .table table tbody tr th:last-child {
+        padding-right: 0; }
+    .section.section-table .table table tbody tr td {
+      padding: 4px 6px; }
+      .section.section-table .table table tbody tr td:first-child {
+        padding-left: 0; }
+      .section.section-table .table table tbody tr td:last-child {
+        padding-right: 0; }
 
 .search-form {
   margin-top: 90px;

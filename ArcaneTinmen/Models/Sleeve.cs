@@ -19,7 +19,10 @@ namespace ArcaneTinmen.Models
         public decimal SalePrice { get; set; }
         [Required(ErrorMessage = "Please enter the amount of sleeves in stock")]
         public int StockAmount { get; set; }
-        // Active property to determine, whether to list a product
+
+        public string CardImageFileName { get; set; }
+
+        public string BadgeImageFileName { get; set; }
 
         public virtual ICollection<OrderLine> OrderLines { get; set; }
         public virtual ICollection<GameSleeve> GameSleeves { get; set; }

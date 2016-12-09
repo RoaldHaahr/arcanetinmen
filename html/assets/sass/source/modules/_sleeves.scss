@@ -46,11 +46,7 @@
 		border: 10px solid $white;
 		border-radius: 20px;
 		h3 {
-			margin-top: 24px;
-			font-weight: 900;
-			color: $white;
-			font-size: 1.801905253333333em;
-			@include text-border(2px, $dark-grey);		
+			margin-top: 24px;		
 		}
 		img {
 			margin-top: 12px;

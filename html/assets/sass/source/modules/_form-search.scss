@@ -1,12 +1,10 @@
 .form-search {
+	margin-top: 60px;
 	form {
 		margin: 0 auto;
 		width: 690px;
 		h2 {
 			margin-bottom: 36px;
-			color: $white;
-			@include text-border(3px, $dark-grey);
-			font-weight: 900;
 			text-align: center;
 		}
 	}

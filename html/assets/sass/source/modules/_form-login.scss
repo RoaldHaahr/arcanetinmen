@@ -1,9 +1,13 @@
 .form-login {
+	margin-top: 60px;
+	text-align: center;
+	h2 {
+		margin-bottom: 60px;
+	}
 	form {
 		width: 400px;
 		margin: 0 auto;
 		.input-field {
-			text-align: center;
 			margin-bottom: 12px;
 			> div {
 				margin-top: 4px;

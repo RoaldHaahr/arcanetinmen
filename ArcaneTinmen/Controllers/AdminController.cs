@@ -12,16 +12,25 @@ namespace ArcaneTinmen.Controllers
     {
         public ActionResult Index()
         {
-            using (ArcaneTinmenContext db = new ArcaneTinmenContext())
+            if (Session["AdminId"] != null)
             {
-                return View(db.Sleeves.ToList());
+                using (ArcaneTinmenContext db = new ArcaneTinmenContext())
+                {
+                    return View(db.Sleeves.ToList());
+                }
             }
+            else
+            {
+                RedirectToAction("Login");
+            }
+            return View();
         }
 
         public ActionResult Login()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Login(Admin admin)
         {
@@ -32,7 +41,7 @@ namespace ArcaneTinmen.Controllers
                 {
                     Session["AdminId"] = admin.AdminId.ToString();
                     Session["AdminUserName"] = admn.Username.ToString();
-                    return RedirectToAction("LoggedIn");
+                    return RedirectToAction("Index");
                 }
                 else
                 {
