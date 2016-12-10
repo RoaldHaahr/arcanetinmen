@@ -21,9 +21,8 @@ namespace ArcaneTinmen.Controllers
             }
             else
             {
-                RedirectToAction("Login");
+                return RedirectToAction("Login");
             }
-            return View();
         }
 
         public ActionResult Login()
@@ -34,6 +33,8 @@ namespace ArcaneTinmen.Controllers
         [HttpPost]
         public ActionResult Login(Admin admin)
         {
+            if (Session["AdminId"] != null) return RedirectToAction("Index");
+
             using (ArcaneTinmenContext db = new ArcaneTinmenContext())
             {
                 var admn = db.Admins.Single(a => a.Username == admin.Username && a.Password == admin.Password);

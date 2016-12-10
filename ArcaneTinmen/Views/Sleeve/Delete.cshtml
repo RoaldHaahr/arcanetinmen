@@ -1,0 +1,83 @@
+﻿@model ArcaneTinmen.Models.Sleeve
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<section class="section section-dl">
+    <h2>Delete</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>@Html.DisplayFor(model => model.Name)</h4>
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Height)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Height)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Width)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Width)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SalePrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SalePrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StockAmount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StockAmount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CardImageFileName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CardImageFileName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BadgeImageFileName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BadgeImageFileName)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-submit">
+                <input type="submit" value="Delete" class="btn" /> |
+                @Html.ActionLink("Back to List", "Index", "Admin")
+            </div>
+        }
+    </div>
+</section>
+

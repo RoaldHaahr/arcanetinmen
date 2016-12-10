@@ -1,7 +1,7 @@
 ﻿@model ArcaneTinmen.Models.Sleeve
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
 }
 
 <section class="section section-form form-create">
@@ -13,6 +13,7 @@
         <div class="form-h">
             <h4>Create new sleeve</h4>
             @Html.ValidationSummary(true, "")
+            @Html.HiddenFor(model => model.SleeveId)
             <div class="input-field">
                 @Html.LabelFor(model => model.SleeveId)
                 <div>
@@ -86,13 +87,13 @@
             </div>
 
             <div class="form-submit">
-                    <input type="submit" value="Create" class="btn" />
+                <input type="submit" value="Update" class="btn" />
             </div>
         </div>
     }
+    <div>
+        @Html.ActionLink("Back to List", "Index", "Admin")
+    </div>
 </section>
 
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

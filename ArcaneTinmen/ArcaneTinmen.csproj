@@ -159,6 +159,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\StringExtensions.cs" />
     <Compile Include="Migrations\201612091148027_init.cs" />
     <Compile Include="Migrations\201612091148027_init.Designer.cs">
       <DependentUpon>201612091148027_init.cs</DependentUpon>
@@ -208,6 +209,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\SleeveSummary.cshtml" />
     <Content Include="Views\Sleeve\Create.cshtml" />
+    <Content Include="Views\Sleeve\Edit.cshtml" />
+    <Content Include="Views\Sleeve\Delete.cshtml" />
+    <Content Include="Views\Sleeve\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

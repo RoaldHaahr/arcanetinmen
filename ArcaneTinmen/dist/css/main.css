@@ -316,32 +316,36 @@ form > div.form-h .input-field > div {
           .sleeve-preview .sleeve-info-container .sleeve-info > div p:last-child {
             margin-bottom: 0; }
 
-.section.section-table {
-  display: table;
+.section.section-table h2 {
+  margin: 60px 0;
+  text-align: center; }
+
+.section.section-table .table {
   margin: 0 auto;
+  display: table;
   padding: 1em;
   background-color: white;
   border-radius: 10px; }
-  .section.section-table p {
+  .section.section-table .table p {
     padding-left: 1em;
     margin-bottom: 1em; }
-  .section.section-table .table {
+  .section.section-table .table div {
     padding: 1em;
     border: 1px solid #0772BA;
     border-radius: 10px; }
-    .section.section-table .table table tbody tr th {
+    .section.section-table .table div table tbody tr th {
       padding: 4px 6px;
       font-weight: 900;
       text-align: left; }
-      .section.section-table .table table tbody tr th:first-child {
+      .section.section-table .table div table tbody tr th:first-child {
         padding-left: 0; }
-      .section.section-table .table table tbody tr th:last-child {
+      .section.section-table .table div table tbody tr th:last-child {
         padding-right: 0; }
-    .section.section-table .table table tbody tr td {
+    .section.section-table .table div table tbody tr td {
       padding: 4px 6px; }
-      .section.section-table .table table tbody tr td:first-child {
+      .section.section-table .table div table tbody tr td:first-child {
         padding-left: 0; }
-      .section.section-table .table table tbody tr td:last-child {
+      .section.section-table .table div table tbody tr td:last-child {
         padding-right: 0; }
 
 .search-form {
