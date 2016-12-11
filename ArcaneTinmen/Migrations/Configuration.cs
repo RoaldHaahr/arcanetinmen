@@ -165,24 +165,24 @@ namespace ArcaneTinmen.Migrations
             sleeves.ForEach(s => context.Sleeves.AddOrUpdate(s));
             context.SaveChanges();
 
-            List<Admin> admins = new List<Admin>
+            List<Account> accounts = new List<Account>
             {
-                new Admin
+                new Account
                 {
-                    AdminId = 1,
+                    AccountId = 1,
                     Username = "MasterChef",
                     Password = "admin",
                     Email = "Admin@adminsen.dk"
                 },
-                new Admin
+                new Account
                 {
-                    AdminId = 2,
+                    AccountId = 2,
                     Username = "MinorAdmin",
                     Password = "admin",
                     Email = "Admin@adminson.dk"
                 }
             };
-            admins.ForEach(a => context.Admins.AddOrUpdate(a));
+            accounts.ForEach(a => context.Accounts.AddOrUpdate(a));
             context.SaveChanges();
         }
     }

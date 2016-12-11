@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ArcaneTinmen.Models.Account>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="section section-table">
+    <h2>Admins</h2>
+    <div class="table admin-table">
+
+        <p>
+            @Html.ActionLink("Add New", "Create")
+        </p>
+        <div>
+            <table>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Username)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Password)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.AccountId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.AccountId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.AccountId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</section>

@@ -151,6 +151,9 @@ h3 {
   font-weight: 900;
   text-align: center; }
 
+.link-bar {
+  padding: 1em; }
+
 header {
   position: relative;
   padding: 10px;
@@ -327,8 +330,10 @@ form > div.form-h .input-field > div {
   background-color: white;
   border-radius: 10px; }
   .section.section-table .table p {
+    margin-bottom: 1em;
     padding-left: 1em;
-    margin-bottom: 1em; }
+    padding-right: 1em;
+    text-align: right; }
   .section.section-table .table div {
     padding: 1em;
     border: 1px solid #0772BA;
@@ -347,6 +352,39 @@ form > div.form-h .input-field > div {
         padding-left: 0; }
       .section.section-table .table div table tbody tr td:last-child {
         padding-right: 0; }
+
+.section.section-dl h2 {
+  text-align: center; }
+
+.section.section-dl .dl {
+  margin: auto;
+  padding: 1em;
+  width: 690px;
+  background-color: white;
+  border-radius: 10px; }
+  .section.section-dl .dl > div {
+    padding: 1em;
+    border: 1px solid #0772BA;
+    border-radius: 10px; }
+    .section.section-dl .dl > div dl {
+      zoom: 1; }
+      .section.section-dl .dl > div dl dt {
+        display: inline-block;
+        margin: .25em -.125em;
+        padding-right: 1em;
+        width: 30%;
+        font-weight: 900;
+        text-align: right; }
+      .section.section-dl .dl > div dl dd {
+        margin: .25em -.125em;
+        width: 70%;
+        display: inline-block; }
+        .section.section-dl .dl > div dl dd:after {
+          content: "\A";
+          white-space: pre; }
+
+.section.section-dl .link-bar {
+  padding-bottom: 0; }
 
 .search-form {
   margin-top: 90px;

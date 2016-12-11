@@ -18,12 +18,8 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#" title="">Buy Sleeves</a></li>
-                <li><a href="#" title="">About</a></li>
-                <li><a href="#" title="">Contact</a></li>
-                <li><a href="~/Views/Admin/Index.cshtml">Login User</a></li>
-                <li><a href="#" title="">Cart</a>@Html.Action("Summary", "Cart")</li>
-                <li></li>
+                <li>@Html.ActionLink("Sleeves", "Index", "Sleeves")</li>
+                <li>@Html.ActionLink("Admins", "Index", "Accounts")</li>
             </ul>
         </nav>
     </header>

@@ -1,0 +1,87 @@
+﻿@model ArcaneTinmen.Models.Sleeve
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="section section-dl">
+    <h2>Details</h2>
+
+    <div class="dl dl-details">
+        <div>
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Height)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Height)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Width)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Width)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SalePrice)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SalePrice)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StockAmount)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StockAmount)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CardImageFileName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CardImageFileName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BadgeImageFileName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BadgeImageFileName)
+                </dd>
+
+            </dl>
+        </div>
+        <p class="link-bar">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.SleeveId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.SleeveId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</section>
+
+

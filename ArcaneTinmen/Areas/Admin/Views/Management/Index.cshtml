@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+<h2>Sleeves</h2>
+<section class="section section-table">
+    <h2>Admin</h2>
+    <div class="table sleeve-table">
+        <p>
+            @Ajax.ActionLink(
+                "Sleeves",
+                "Index",
+                "Sleeves",
+                new AjaxOptions
+                {
+                    HttpMethod = "GET",
+                    UpdateTargetId = "result",
+                    InsertionMode = InsertionMode.Replace
+                }
+            )
+
+            @Ajax.ActionLink(
+                "Admins",
+                "Index",
+                "Accounts",
+                new AjaxOptions
+                {
+                    HttpMethod = "GET",
+                    UpdateTargetId = "result",
+                    InsertionMode = InsertionMode.Replace
+                }
+            )
+        </p>
+        <div id="result"></div>
+
+    </div>
+</section>

@@ -31,14 +31,14 @@ namespace ArcaneTinmen.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(Admin admin)
+        public ActionResult Login(Account admin)
         {
             if (Session["AdminId"] != null) return RedirectToAction("Index");
 
-                var admn = db.Admins.Single(a => a.Username == admin.Username && a.Password == admin.Password);
+                var admn = db.Accounts.Single(a => a.Username == admin.Username && a.Password == admin.Password);
                 if (admn != null)
                 {
-                    Session["AdminId"] = admin.AdminId.ToString();
+                    Session["AdminId"] = admin.AccountId.ToString();
                     Session["AdminUserName"] = admn.Username.ToString();
                     return RedirectToAction("Index");
                 }

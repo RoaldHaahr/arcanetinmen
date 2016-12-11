@@ -11,8 +11,10 @@
 			background-color: white;
 			border-radius: 10px;
 			p {
-				padding-left: 1em;
 				margin-bottom: 1em;
+				padding-left: 1em;
+				padding-right: 1em;
+				text-align: right;
 			}
 
 			div {
@@ -47,6 +49,47 @@
 					}
 				}
 			}
+		}
+	}
+	&.section-dl {
+		h2 {
+			text-align: center;
+		}
+		.dl {
+			margin: auto;
+			padding: 1em;
+			width: 690px;
+			background-color: white;
+			border-radius: 10px;
+			> div {
+				padding: 1em;
+				border: 1px solid $blue;
+				border-radius: 10px;
+				dl {
+					// overflow: auto;
+					zoom: 1;
+					dt {
+						display: inline-block;
+						margin: .25em -.125em;
+						padding-right: 1em;
+						width: 30%;
+						font-weight: 900;
+						text-align: right;
+					}
+					dd {
+						margin: .25em -.125em;
+						width: 70%;
+						display: inline-block;
+						&:after {
+							content: "\A";
+							white-space: pre;
+						}
+					}
+				}
+			}
+		}
+		.link-bar {
+			padding-bottom: 0;
 		}
 	}
 }
