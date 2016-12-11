@@ -22,7 +22,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         {
             if (Session["AdminId"] == null) return RedirectToAction("Login");
 
-            return RedirectToAction("Index", "Sleeve");
+            return RedirectToAction("Index", "Sleeves");
         }
 
         public ActionResult Login()

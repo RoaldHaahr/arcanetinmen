@@ -4,96 +4,102 @@
     ViewBag.Title = "Create";
 }
 
-<section class="section section-form form-create">
+<section class="section section-form">
     <h2>Create new sleeve</h2>
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
 
-        <div class="form-h">
-            @Html.ValidationSummary(true, "")
-            <div class="input-field">
-                @Html.LabelFor(model => model.SleeveId)
+    <div class="form form-create">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div>
+                @Html.ValidationSummary(true, "")
                 <div>
-                    @Html.EditorFor(model => model.SleeveId)
-                    @Html.ValidationMessageFor(model => model.SleeveId, "")
+                    @Html.LabelFor(model => model.SleeveId)
+                    <div>
+                        @Html.EditorFor(model => model.SleeveId)
+                        @Html.ValidationMessageFor(model => model.SleeveId, "")
+                    </div>
                 </div>
-            </div>
 
-            <div class="input-field">
-                @Html.LabelFor(model => model.Name)
                 <div>
-                    @Html.EditorFor(model => model.Name)
-                    @Html.ValidationMessageFor(model => model.Name, "")
+                    @Html.LabelFor(model => model.Name)
+                    <div>
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name, "")
+                    </div>
                 </div>
-            </div>
 
-            <div class="input-field">
-                @Html.LabelFor(model => model.Description)
                 <div>
-                    @Html.EditorFor(model => model.Description)
-                    @Html.ValidationMessageFor(model => model.Description, "")
+                    @Html.LabelFor(model => model.Description)
+                    <div>
+                        @Html.EditorFor(model => model.Description)
+                        @Html.ValidationMessageFor(model => model.Description, "")
+                    </div>
                 </div>
-            </div>
 
-            <div class="input-field">
-                @Html.LabelFor(model => model.Height, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div>
-                    @Html.EditorFor(model => model.Height)
-                    @Html.ValidationMessageFor(model => model.Height, "")
+                    @Html.LabelFor(model => model.Height)
+                    <div>
+                        @Html.EditorFor(model => model.Height)
+                        @Html.ValidationMessageFor(model => model.Height, "")
+                    </div>
                 </div>
-            </div>
 
-            <div class="input-field">
-                @Html.LabelFor(model => model.Width)
                 <div>
-                    @Html.EditorFor(model => model.Width)
-                    @Html.ValidationMessageFor(model => model.Width, "")
+                    @Html.LabelFor(model => model.Width)
+                    <div>
+                        @Html.EditorFor(model => model.Width)
+                        @Html.ValidationMessageFor(model => model.Width, "")
+                    </div>
                 </div>
-            </div>
 
-            <div class="input-field">
-                @Html.LabelFor(model => model.SalePrice)
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.SalePrice)
-                    @Html.ValidationMessageFor(model => model.SalePrice, "")
-                </div>
-            </div>
-
-            <div class="input-field">
-                @Html.LabelFor(model => model.StockAmount)
                 <div>
-                    @Html.EditorFor(model => model.StockAmount)
-                    @Html.ValidationMessageFor(model => model.StockAmount, "")
+                    @Html.LabelFor(model => model.SalePrice)
+                    <div>
+                        @Html.EditorFor(model => model.SalePrice)
+                        @Html.ValidationMessageFor(model => model.SalePrice, "")
+                    </div>
                 </div>
-            </div>
 
-            <div class="input-field">
-                @Html.LabelFor(model => model.CardImageFileName)
                 <div>
-                    @Html.EditorFor(model => model.CardImageFileName)
-                    @Html.ValidationMessageFor(model => model.CardImageFileName, "")
+                    @Html.LabelFor(model => model.StockAmount)
+                    <div>
+                        @Html.EditorFor(model => model.StockAmount)
+                        @Html.ValidationMessageFor(model => model.StockAmount, "")
+                    </div>
                 </div>
+
+                <div>
+                    @Html.LabelFor(model => model.CardImageFileName)
+                    <div>
+                        @Html.EditorFor(model => model.CardImageFileName, new { htmlAttributes = new { placeholder = "Image filename" } })
+                        @Html.ValidationMessageFor(model => model.CardImageFileName, "")
+                    </div>
+                </div>
+
+                <div>
+                    @Html.LabelFor(model => model.BadgeImageFileName)
+                    <div>
+                        @Html.EditorFor(model => model.BadgeImageFileName, new { htmlAttribute = new { placeholder = "Badge filename" } })
+                        @Html.ValidationMessageFor(model => model.BadgeImageFileName, "")
+                    </div>
+                </div>
+                <p class="link-bar">
+                    <input type="submit" value="Create" class="btn" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
             </div>
 
-            <div class="input-field">
-                @Html.LabelFor(model => model.BadgeImageFileName)
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.BadgeImageFileName)
-                    @Html.ValidationMessageFor(model => model.BadgeImageFileName, "")
-                </div>
-            </div>
+            
 
-            <div class="form-submit">
-                <input type="submit" value="Create" class="btn" />
-            </div>
-        </div>
-    }
+        }
+    </div>
 </section>
 
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    
 </div>
 
 

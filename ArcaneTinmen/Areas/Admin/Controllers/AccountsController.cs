@@ -18,12 +18,14 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Accounts
         public ActionResult Index()
         {
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
             return View(db.Accounts.ToList());
         }
 
         // GET: Admin/Accounts/Details/5
         public ActionResult Details(int? id)
         {
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +41,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Accounts/Create
         public ActionResult Create()
         {
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
             return View();
         }
 
@@ -49,6 +52,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "AccountId,Username,Password,Email")] Account account)
         {
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
             if (ModelState.IsValid)
             {
                 db.Accounts.Add(account);
@@ -62,6 +66,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Accounts/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -81,6 +86,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "AccountId,Username,Password,Email")] Account account)
         {
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
             if (ModelState.IsValid)
             {
                 db.Entry(account).State = EntityState.Modified;
@@ -93,6 +99,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Accounts/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -110,6 +117,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
             Account account = db.Accounts.Find(id);
             db.Accounts.Remove(account);
             db.SaveChanges();
