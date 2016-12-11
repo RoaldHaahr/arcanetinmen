@@ -1,71 +1,52 @@
-﻿@model IEnumerable<ArcaneTinmen.Models.Sleeve>
-@using ArcaneTinmen.HtmlHelpers
-
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/jquery.unobtrusive-ajax.min.js"></script>
 
+<h2>Sleeves</h2>
 <section class="section section-table">
     <h2>Sleeves</h2>
     <div class="table sleeve-table">
         <p>
-            @Html.ActionLink("Create new sleeve", "Create", "Sleeve", "", new { @class = "link" })
-        </p>
-        <div>
-            <table>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Name)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Description)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Width)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Height)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.SalePrice)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.StockAmount)
-                    </th>
-                    <th></th>
-                </tr>
-
-                @foreach (var item in Model)
+            @Ajax.ActionLink(
+                "Sleeves",
+                "Sleeves",
+                "Admin",
+                new AjaxOptions
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                        <td>
-                            @item.Description.Truncate(30)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Width) mm
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Height) mm
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.SalePrice) kr.
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.StockAmount)
-                        </td>
-                        <td>
-                            <a href="/Sleeve/Edit/@item.SleeveId" id="AT-10408">Edit</a> |
-                            <a href="/Sleeve/Details/@item.SleeveId" id="AT-10408">Details</a> |
-                            <a href="/Sleeve/Delete/@item.SleeveId" id="AT-10408">Delete</a>
-                        </td>
-                    </tr>
+                    HttpMethod = "GET",
+                    UpdateTargetId = "result",
+                    InsertionMode = InsertionMode.Replace
                 }
+            )
 
-            </table>
-        </div>
+            @Ajax.ActionLink(
+                "Customers",
+                "Customers",
+                "Admin",
+                new AjaxOptions
+                {
+                    HttpMethod = "GET",
+                    UpdateTargetId = "result",
+                    InsertionMode = InsertionMode.Replace
+                }
+            )
+
+            @Ajax.ActionLink(
+                "Back",
+                "Index",
+                "Admin",
+                new AjaxOptions
+                {
+                    HttpMethod = "GET",
+                    UpdateTargetId = "result",
+                    InsertionMode = InsertionMode.Replace
+                }
+            )
+        </p>
+        <div id="result"></div>
+
     </div>
 </section>

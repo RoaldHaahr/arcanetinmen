@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ArcaneTinmen.Models
 {
@@ -12,8 +13,9 @@ namespace ArcaneTinmen.Models
         public string SleeveId { get; set; }
         [Required]
         public int Quantity { get; set; }
-
+        [ForeignKey("OrderPlacementId")]
         public OrderPlacement OrderPlacement { get; set; }
+        [ForeignKey("SleeveId")]
         public Sleeve Sleeve { get; set; }
 
         public OrderLine(int orderPlacementId, string sleeveId, int quantity)

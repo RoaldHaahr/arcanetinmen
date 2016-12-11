@@ -10,14 +10,14 @@ namespace ArcaneTinmen.Controllers
 {
     public class AdminController : Controller
     {
+
+        private ArcaneTinmenContext db = new ArcaneTinmenContext();
+
         public ActionResult Index()
         {
             if (Session["AdminId"] != null)
             {
-                using (ArcaneTinmenContext db = new ArcaneTinmenContext())
-                {
                     return View(db.Sleeves.ToList());
-                }
             }
             else
             {
@@ -35,8 +35,6 @@ namespace ArcaneTinmen.Controllers
         {
             if (Session["AdminId"] != null) return RedirectToAction("Index");
 
-            using (ArcaneTinmenContext db = new ArcaneTinmenContext())
-            {
                 var admn = db.Admins.Single(a => a.Username == admin.Username && a.Password == admin.Password);
                 if (admn != null)
                 {
@@ -48,7 +46,7 @@ namespace ArcaneTinmen.Controllers
                 {
                     ModelState.AddModelError("", "Username or Password is wrong.");
                 }
-            }
+
             return View();
         }
 
@@ -62,6 +60,17 @@ namespace ArcaneTinmen.Controllers
             {
                 return RedirectToAction("Login");
             }
+        }
+
+        public PartialViewResult Sleeves()
+        {
+                List<Sleeve> model = db.Sleeves.ToList();
+                return PartialView("Sleeves/Sleeves", model);
+        }
+        public PartialViewResult Customers()
+        {
+                List<Customer> model = db.Customers.ToList();           
+                return PartialView("Customers/Customers", model);
         }
     }
 }
