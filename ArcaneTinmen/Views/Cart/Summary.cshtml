@@ -1,8 +1,13 @@
 ﻿@model ArcaneTinmen.ViewModels.Cart
 
-@{
-    ViewBag.Title = "Summary";
-}
-
-<h2>Summary</h2>
+<div class="navbar-right" style="padding-right:20px">
+    @Html.ActionLink("Checkout", "Index", "Cart",
+new { returnUrl = Request.Url.PathAndQuery },
+new { @class = "btn btn-default navbar-btn" })
+</div>
+<div class="navbar-text navbar-right" style="padding-right:20px">
+    <b>Your cart:</b>
+    @Model.Lines.Sum(x => x.Quantity) item(s),
+    @Model.TotalPrice.ToString("n")
+</div>
 

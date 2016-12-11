@@ -56,11 +56,11 @@ namespace ArcaneTinmen.Controllers
 
         public ViewResult Checkout()
         {
-            return View(new OrderPlacement());
+            return View(new ShippingDetails());
         }
 
         [HttpPost]
-        public ViewResult Checkout(Cart cart, OrderPlacement orderplacement)
+        public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
         {
             if (cart.Lines.Count() == 0)
             {
@@ -74,7 +74,7 @@ namespace ArcaneTinmen.Controllers
             }
             else
             {
-                return View(orderplacement);
+                return View(shippingDetails);
             }
         }
     }
