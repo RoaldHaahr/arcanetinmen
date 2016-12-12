@@ -22,7 +22,7 @@ namespace ArcaneTinmen.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            List<Customer> customers = new List<Customer>
+          /*  List<Customer> customers = new List<Customer>
             {
                 new Customer
                 {
@@ -61,7 +61,7 @@ namespace ArcaneTinmen.Migrations
                 }
             };
             customers.ForEach(c => context.Customers.AddOrUpdate(c));
-            context.SaveChanges();
+            context.SaveChanges(); */
 
             List<Sleeve> sleeves = new List<Sleeve>
             {

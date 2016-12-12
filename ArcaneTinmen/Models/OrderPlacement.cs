@@ -18,8 +18,6 @@ namespace ArcaneTinmen.Models
         [Column(TypeName = "datetime2")]
         public DateTime DateShipped { get; set; }
         public decimal TotalPrice { get; set; }
-
-        public Customer Customer { get; set; }
         public virtual ICollection<OrderLine> OrderLines { get; set; }
     }
 }

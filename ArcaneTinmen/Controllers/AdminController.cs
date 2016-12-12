@@ -67,10 +67,5 @@ namespace ArcaneTinmen.Controllers
                 List<Sleeve> model = db.Sleeves.ToList();
                 return PartialView("Sleeves/Sleeves", model);
         }
-        public PartialViewResult Customers()
-        {
-                List<Customer> model = db.Customers.ToList();           
-                return PartialView("Customers/Customers", model);
-        }
     }
 }
