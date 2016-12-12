@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <title>Board Game Sleeves</title>
     <link rel="stylesheet" href="~/dist/css/main.css">
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
@@ -14,7 +15,7 @@
             <img src="~/dist/img/logo.svg" alt="Logo">
         </figure>
         <div class="page-title">
-            <h1>Board Game Sleeves</h1>
+            <a href="~/Index.cshtml"><h1>Board Game Sleeves</h1></a>
         </div>
         <nav>
             <ul>
@@ -22,7 +23,7 @@
                 <li><a href="#" title="">About</a></li>
                 <li><a href="#" title="">Contact</a></li>
                 <li><a href="~/Views/Admin/Index.cshtml">Login User</a></li>
-                <li><a href="#" title="">Cart</a>@Html.Action("Summary", "Cart")</li>
+                <li>@Html.Action("Summary", "Cart")</li>
                 <li></li>
             </ul>
         </nav>

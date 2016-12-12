@@ -9,7 +9,6 @@ namespace ArcaneTinmen.DAL
         public ArcaneTinmenContext() : base("ArcaneTinmenContext") { }
 
         public DbSet<Account> Accounts { get; set; }
-        public DbSet<Customer> Customers { get; set; }
         public DbSet<OrderPlacement> OrderPlacements { get; set; }
         public DbSet<OrderLine> OrderLines { get; set; }
         public DbSet<Sleeve> Sleeves { get; set; }

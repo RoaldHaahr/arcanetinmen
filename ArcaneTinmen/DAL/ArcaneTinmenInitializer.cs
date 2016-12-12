@@ -7,7 +7,7 @@ namespace ArcaneTinmen.DAL
     public class ArcaneTinmenInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ArcaneTinmenContext>
     {
         protected override void Seed(ArcaneTinmenContext context)
-        {
+        { /*
             var customers = new List<Customer>
             {
                 new Customer {
@@ -24,7 +24,7 @@ namespace ArcaneTinmen.DAL
                 }
             };
             customers.ForEach(c => context.Customers.Add(c));
-            context.SaveChanges();
+            context.SaveChanges(); */
         }
     }
 }

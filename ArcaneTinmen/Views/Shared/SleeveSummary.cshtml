@@ -7,8 +7,11 @@
             @Model.Name
         </h3>
         <img src="~/dist/img/sleeves/@Model.BadgeImageFileName" alt="Small">
+@using (Html.BeginForm("AddToCart", "Cart"))
+{
         @Html.Hidden("SleeveId", Model.SleeveId)
         @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-        <input type="submit" class="btn btn-success" value="Add to cart" />
+        <input type="submit" class="cart-cta" value="Add to cart" />
+}
     </div>
 </a>
