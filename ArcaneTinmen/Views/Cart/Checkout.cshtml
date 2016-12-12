@@ -2,29 +2,25 @@
 @{
     ViewBag.Title = "BoardGamesStore: Checkout";
 }
-<h2>Check out now</h2>
-<p>Please enter your details, and we'll ship your goods right away!</p>
-@using (Html.BeginForm())
-{
-    <h3>Ship to</h3>
-    foreach (var property in ViewData.ModelMetadata.Properties)
-    {
-        if (property.PropertyName != "GiftWrap")
+<section class="section" style="padding-top:60px">
+    <div style="padding:40px"class="modal div.form">
+        <h2>Check out now</h2>
+        <p style="color:white; font-size:1.5em;">Please enter your details, and we'll ship your goods right away!</p>
+        @using (Html.BeginForm())
         {
-            <div class="form-group">
-                <label>@(property.DisplayName ?? property.PropertyName)</label>
-                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+            foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                if (property.PropertyName != "GiftWrap")
+                {
+                    <div class="input-field" style="padding-top:20px">
+                        <label style="padding-bottom:5px">@(property.DisplayName ?? property.PropertyName)</label>
+                        @Html.TextBox(property.PropertyName, null, new { @class = "text-box single-line" })
+                    </div>
+                }
+            }         
+            <div class="text-center">
+                <input class="btn btn-orange" style="margin-top:50px; float:right;"type="submit" value="Complete order" />
             </div>
         }
-    }
-    <h3>Options</h3>
-    <div class="checkbox">
-        <label>
-            @Html.EditorFor(x => x.GiftWrap)
-            Gift wrap these items
-        </label>
     </div>
-    <div class="text-center">
-        <input class="btn btn-primary" type="submit" value="Complete order" />
-    </div>
-}
+</section>
