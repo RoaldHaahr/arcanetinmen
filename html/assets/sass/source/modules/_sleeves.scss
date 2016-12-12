@@ -1,6 +1,6 @@
 .sleeves-section {
 	position: absolute;
-	bottom: -200px;
+	bottom: -240px;
 	text-align: center;
 	width: 100%;
 	> div.sleeves-container {
@@ -32,6 +32,10 @@
 	-webkit-transition: top 2s;
 	transition: top .3s, z-index .3s;
 	z-index: 30000;
+		text-decoration: none;
+	&:visited {
+		text-decoration: none;
+	}
 	&:hover {
 		top: -30px;
 	}

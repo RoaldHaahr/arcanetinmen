@@ -27,13 +27,13 @@ namespace ArcaneTinmen.Controllers
             });
         }
 
-        public RedirectToRouteResult AddToCart(Cart cart, string sleeveId, string returnUrl)
+        public RedirectToRouteResult AddToCart(Cart cart, string sleeveId, string returnUrl, int sleeveAmount = 1)
         {
             Sleeve sleeve = db.Sleeves.FirstOrDefault(s => s.SleeveId == sleeveId);
 
             if(sleeve != null)
             {
-                cart.AddItem(sleeve, 1);
+                cart.AddItem(sleeve, sleeveAmount);
             }
 
             return RedirectToAction("index", new { controller = returnUrl.Substring(1) });

@@ -4,9 +4,20 @@
 	background-color: rgba(0, 0, 0, .35);
 	width: $modal-width;
 	height: auto;
+	max-width: 100%;
 	border-radius: 10px;
 	z-index: 1;
 	border: 6px solid rgba(0,0,0, .5);
+	.modal-close {
+		position: absolute;
+		right: 1em;
+		top: 1em;
+		cursor: pointer;
+		img {
+			width: 32px;
+			height: auto; 
+		}
+	}
 	.modal-inner {
 		padding: 2em;
 		border-radius: 10px;
@@ -18,23 +29,45 @@
 			overflow: auto;
 			zoom: 1;
 		}
-		.sleeve {
-			display: inline-block;
-			margin-top: 70px;
-			margin-right: 0;
+		.sleeve-img {
+			width: 25%;
 			float: left;
+		}
+		.sleeve {
+			max-width: 100%;
+			background-color: transparent;
+			border: none;
+			display: block;
+			margin-top: 70px;
+			margin-right: auto;
+			margin-left: auto;
 			z-index: 1;
+			float: none;
 			&:hover {
 				top: 0;
 			}
+			.sleeve-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				border-top: 1px solid white;
+				border-left: 1px solid white;
+				background: rgba(255, 255, 255, 0.6);
+				z-index: 2;
+			}
 			.card {
-				top: -100px;
+				max-width: 100%;
+				max-height: 100%;
+				top: -70px;
 			}
 		}
 	}
 	.modal-dl {
-		float: left;
-		margin-left: 100px;
+		margin-left: 2em;
+		width: calc(75% - 2em);
+		float: right;
 		h2 {
 			margin-top: 0;
 			text-align: left;
@@ -45,7 +78,7 @@
 			letter-spacing: .1em;
 			dt {
 				padding: .2em;
-				width: 200px;
+				width: 30%;
 				color: white;
 				@include text-border(2px, black);
 				float: left;
@@ -55,36 +88,47 @@
 			}
 			dd {
 				padding: .2em;
+				width: 70%;
 				color: white;
 				@include text-border(2px, black);
+				float: left;
 				&.dl-price {
 					color: $green;
 				}
 			}
 		}
-		input[type=number] {
-			padding: .2em;
-			width: 170px;
-			margin-right: 30px;
-			background-color: rgba(0,0,0,.4);
-			border-radius: 5px;
-			border: 2px solid black;
-			color: $green;
-			font-size: 2em;
-			@include text-border(1px, black);
-
+		.order-controls {
+			padding-top: 1em;
+			clear: both;
+			input[type=number] {
+				padding: 10px;
+				width: calc(30% - 30px);
+				margin-right: 30px;
+				background-color: rgba(0,0,0,.4);
+				border-radius: 5px;
+				border: 2px solid black;
+				color: white;
+				font-size: 1.5em;
+				@include text-border(1px, black);
+				&:focus {
+					outline: 0;
+				}
+			}
+			input[type=submit] {
+				background: linear-gradient(to bottom, #ED6609, darken(#ED6609,8%));
+				padding: 10px;
+				color: white;
+				text-transform: uppercase;
+				border: none;
+				border-radius: 5px;
+				font-size: 1.5em;
+				letter-spacing: .01em;
+				cursor: pointer;
+				&:focus {
+					outline: 0;
+				}
+			}
 		}
-		input[type=submit] {
-			background: linear-gradient(to bottom, #ED6609, darken(#ED6609,8%));
-			padding: 10px;
-			color: white;
-			text-transform: uppercase;
-			border: none;
-			border-radius: 5px;
-			font-size: 1.5em;
-			font-weight: 700;
-			letter-spacing: .12em;
-
-		}
+		
 	}
 }

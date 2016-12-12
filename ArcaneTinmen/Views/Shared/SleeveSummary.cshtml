@@ -1,15 +1,16 @@
-﻿@model ArcaneTinmen.Models.Sleeve
+﻿@model KeyValuePair<Sleeve, Double>
+@using ArcaneTinmen.Models
 
 @*style="transform: rotate(-12.5deg) translateY(35px)"*@
-<a href="#" class="sleeve" data-id="@Model.SleeveId" data-name="@Model.Name" date-description="@Model.Description" data-width="@Model.Width" data-height="@Model.Height">
-    <div class="card" style="background-image: url('/dist/img/sleeves/@Model.CardImageFileName'); width: calc(3.779528 * @(Model.Width)px); height: calc(3.779528 * @(Model.Height)px);">
+<a href="#" class="sleeve" data-id="@Model.Key.SleeveId" data-price="@Model.Key.SalePrice" data-name="@Model.Key.Name" data-description="@Model.Key.Description" data-width="@Model.Key.Width" data-height="@Model.Key.Height" data-stock="@Model.Key.StockAmount" data-card="@Model.Key.CardImageFileName" data-badge="@Model.Key.BadgeImageFileName" style="transform: rotate(@(Model.Value)deg)">
+    <div class="card" style="background-image: url('/dist/img/sleeves/@Model.Key.CardImageFileName'); width: calc(3.779528 * @(Model.Key.Width)px); height: calc(3.779528 * @(Model.Key.Height)px);">
         <h3>
-            @Model.Name
+            @Model.Key.Name
         </h3>
-        <img src="~/dist/img/sleeves/@Model.BadgeImageFileName" alt="Small">
+        <img src="~/dist/img/sleeves/@Model.Key.BadgeImageFileName" alt="Small">
 @using (Html.BeginForm("AddToCart", "Cart"))
 {
-        @Html.Hidden("SleeveId", Model.SleeveId)
+        @Html.Hidden("SleeveId", Model.Key.SleeveId)
         @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
         <input type="submit" class="cart-cta" value="Add to cart" />
 }

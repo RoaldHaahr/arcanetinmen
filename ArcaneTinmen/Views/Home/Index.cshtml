@@ -1,88 +1,89 @@
 ﻿@model ArcaneTinmen.ViewModels.SleeveListViewModel
 @using ArcaneTinmen.Models
 
-
-@{ 
+@{
     ViewBag.Title = "Index";
+
+    double SleeveCount = Model.Sleeves.Count();
+    double SleeveAngle = (SleeveCount * 5 / 2 - SleeveCount * 5) - 2.5;
 }
 
 <section class="section form-search">
-    <form action="index_submit" method="get" accept-charset="utf-8" style="display: none;">
+    <form action="index_submit" method="get" accept-charset="utf-8">
         <h2>Find Your Fit</h2>
         <div class="input-field input-field-search">
             <span class="icon icon-search"></span>
             <input type="search" name="Search Sleeves" placeholder="Insert Board Game Name ...">
         </div>
+        <p class="section-divider">or</p>
+        <h2>Pick Your Sleeve</h2>
+
     </form>
-    <div class="modal modal-sleeve">
+    <div class="modal modal-sleeve" style="display: none;">
+        <a class="modal-close js-modal-close">
+            <img src="/dist/img/icons/btn-close.svg" alt="Close button" />
+        </a>
         <div class="modal-inner">
             <article class="article-sleeve article">
-                <div class="sleeve">
-                    <div class="card" style="background-image: url('/dist/img/sleeves/m_card.svg'); width: calc(3.779528 * 57px); height: calc(3.779528 * 89px);">
-                        <h3>
-                            Medium
-                        </h3>
-                        <img src="~/dist/img/sleeves/m_badge.svg" alt="Small">
+                <div class="sleeve-img">
+                    <div class="sleeve js-sleeve">
+                        <div class="sleeve-overlay"></div>
+                        <div class="card" id="js-sleeve-card">
+                            <h3 class="js-sleeve-name"></h3>
+                            <img id="js-sleeve-badge" src="" alt="Small">
+                        </div>
                     </div>
                 </div>
                 <section class="section-dl section sleeve-info modal-dl">
-                    <h2>Medium sleeve</h2>
+                    <h2 class="js-sleeve-name"></h2>
                     <dl>
                         <dt class="dl-price">
                             Price:
                         </dt>
-                        <dd class="dl-price">
-                            0.50 DKK
-                        </dd>
+                        <dd class="dl-price" id="js-sleeve-price"></dd>
                         <dt>
                             ProductID:
                         </dt>
-                        <dd>
-                            AT-10406
-                        </dd>
+                        <dd id="js-sleeve-id"></dd>
                         <dt>
-                            Description: 
+                            Description:
                         </dt>
-                        <dd>
-                            CCG-Size
-                        </dd>
+                        <dd id="js-sleeve-description"></dd>
                         <dt>
                             Dimensions:
                         </dt>
-                        <dd>
-                            63 x 88 mm
-                        </dd>
+                        <dd id="js-sleeve-dimensions"></dd>
                         <dt>
                             Stock amount:
                         </dt>
-                        <dd>
-                            100 +
-                        </dd>
+                        <dd id="js-sleeve-stock"></dd>
                         <dt>
                             Fits games like:
                         </dt>
-                        <dd>
+                        <dd id="js-sleeve-games">
                             Munchkin, Monopoly, Risk, Axis of Evil, Dominion
                         </dd>
                     </dl>
-                    @Html.Hidden("SleeveId", "AT-10406")
-                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-                    <input type="number" name="SleeveAmount"/>
-                    <input type="submit" class="btn btn-orange" value="Add to cart" />
+                    <form action="/Cart/AddToCart" method="post" class="order-controls">
+                        @Html.Hidden("SleeveId", "AT-10406")
+                        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                        <input type="number" value="1" id="js-sleeve-order-amount" name="SleeveAmount" />
+                        <input type="submit" class="btn btn-orange" value="Add to cart" />
+                    </form>
+
                 </section>
             </article>
             <input id="SleeveId" name="SleeveId" type="hidden" value="AT-10403">
         </div>
     </div>
 </section>
-<p class="section-divider">or</p>
 <section class="sleeves-section">
-    <h2>Pick Your Sleeve</h2>
     <div class="sleeves-container">
         <div class="sleeves">
             @foreach (Sleeve sleeve in Model.Sleeves.ToList())
             {
-                @Html.Partial("SleeveSummary", sleeve);
+                SleeveAngle += 5;
+                @Html.Partial("SleeveSummary", new KeyValuePair<Sleeve, Double>(sleeve, SleeveAngle))
             }
         </div>
     </div>
