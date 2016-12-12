@@ -1,52 +1,57 @@
 ﻿@model ArcaneTinmen.ViewModels.CartIndexViewModel
-
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
 }
 
 
-<h2>Your cart</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Quantity</th>
-            <th>Item</th>
-            <th class="text-right">Price</th>
-            <th class="text-right">Subtotal</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var line in Model.Cart.Lines)
-        {
-            <tr>
-                <td class="text-center">@line.Quantity</td>
-                <td class="text-left">@line.Sleeve.Name</td>
-                <td class="text-right">@line.Sleeve.SalePrice.ToString("n")</td>
-                <td class="text-right">
-                    @((line.Quantity * line.Sleeve.SalePrice).ToString("n"))
-                </td>
-                <td>
-                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+<section class="section" style="padding-top:60px">
+    <div style="padding:40px" class="modal">
+        <div>
+            <h2 style="text-align:center; padding-bottom:5%;">Your cart</h2>
+            <table style="width:100%; height:auto;">
+                <thead style="font-size:2em;color:white;text-align:left;border-bottom: 1px solid white;">
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody style="text-align:left;padding: 50px;font-size: 1.5em;">
+                    @foreach (var line in Model.Cart.Lines)
                     {
-                        @Html.Hidden("ProductId", line.Sleeve.SleeveId)
-                        @Html.HiddenFor(x => x.ReturnUrl)
-                        <input class="btn btn-sm btn-warning"
-                               type="submit" value="Remove" />
+                        <tr>
+                            <td style="padding-top:20px;padding-bottom: 20px;color:white;">@line.Quantity</td>
+                            <td style="color:white">@line.Sleeve.Name</td>
+                            <td style="color:white">@line.Sleeve.SalePrice.ToString("n")</td>
+                            <td style="color:white">
+                                @((line.Quantity * line.Sleeve.SalePrice).ToString("n"))
+                            </td>
+                            <td>
+                                @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                                {
+                                    @Html.Hidden("ProductId", line.Sleeve.SleeveId)
+                                    @Html.HiddenFor(x => x.ReturnUrl)
+                                    <input class="btn btn-sm btn-warning"
+                                           type="submit" value="Remove" />
+                                }
+                            </td>
+                        </tr>
                     }
-                </td>
-            </tr>
-        }
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3" class="text-right">Total:</td>
-            <td class="text-right">
-                @Model.Cart.TotalPrice.ToString("n")
-            </td>
-        </tr>
-    </tfoot>
-</table>
-<div class="text-center">
-    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue shopping</a>
-    @Html.ActionLink("Checkout now", "Checkout", null, new { @class = "btn btn-primary" })
-</div>
+                </tbody>
+                <tfoot style="border-top: 2px solid white;border-bottom: 2px solid white;font-size: 2em;color: white;">
+                    <tr>
+                        <td colspan="3" style="text-align: left; padding-top:20px">Total:</td>
+                        <td class="text-right">
+                            @Model.Cart.TotalPrice.ToString("n")
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="text-center">
+                <button class="btn btn-orange" href="@Model.ReturnUrl" style="float:left;margin-left: 10%;margin-top: 5%;">Continue shopping</button>
+                @Html.ActionLink("Checkout now", "Checkout", null, new { @class = "btn btn-orange", @style = "float:right; margin-right: 10%;margin-top: 5%;" })
+            </div>
+        </div>
+    </div>
+</section>
