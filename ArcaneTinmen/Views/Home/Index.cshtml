@@ -1,18 +1,79 @@
-﻿@using ArcaneTinmen.Models
-@model ArcaneTinmen.ViewModels.SleeveListViewModel
+﻿@model ArcaneTinmen.ViewModels.SleeveListViewModel
+@using ArcaneTinmen.Models
+
 
 @{ 
     ViewBag.Title = "Index";
 }
 
 <section class="section form-search">
-    <form action="index_submit" method="get" accept-charset="utf-8">
+    <form action="index_submit" method="get" accept-charset="utf-8" style="display: none;">
         <h2>Find Your Fit</h2>
         <div class="input-field input-field-search">
             <span class="icon icon-search"></span>
             <input type="search" name="Search Sleeves" placeholder="Insert Board Game Name ...">
         </div>
     </form>
+    <div class="modal modal-sleeve">
+        <div class="modal-inner">
+            <article class="article-sleeve article">
+                <div class="sleeve">
+                    <div class="card" style="background-image: url('/dist/img/sleeves/m_card.svg'); width: calc(3.779528 * 57px); height: calc(3.779528 * 89px);">
+                        <h3>
+                            Medium
+                        </h3>
+                        <img src="~/dist/img/sleeves/m_badge.svg" alt="Small">
+                    </div>
+                </div>
+                <section class="section-dl section sleeve-info modal-dl">
+                    <h2>Medium sleeve</h2>
+                    <dl>
+                        <dt class="dl-price">
+                            Price:
+                        </dt>
+                        <dd class="dl-price">
+                            0.50 DKK
+                        </dd>
+                        <dt>
+                            ProductID:
+                        </dt>
+                        <dd>
+                            AT-10406
+                        </dd>
+                        <dt>
+                            Description: 
+                        </dt>
+                        <dd>
+                            CCG-Size
+                        </dd>
+                        <dt>
+                            Dimensions:
+                        </dt>
+                        <dd>
+                            63 x 88 mm
+                        </dd>
+                        <dt>
+                            Stock amount:
+                        </dt>
+                        <dd>
+                            100 +
+                        </dd>
+                        <dt>
+                            Fits games like:
+                        </dt>
+                        <dd>
+                            Munchkin, Monopoly, Risk, Axis of Evil, Dominion
+                        </dd>
+                    </dl>
+                    @Html.Hidden("SleeveId", "AT-10406")
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                    <input type="number" name="SleeveAmount"/>
+                    <input type="submit" class="btn btn-orange" value="Add to cart" />
+                </section>
+            </article>
+            <input id="SleeveId" name="SleeveId" type="hidden" value="AT-10403">
+        </div>
+    </div>
 </section>
 <p class="section-divider">or</p>
 <section class="sleeves-section">
@@ -22,7 +83,6 @@
             @foreach (Sleeve sleeve in Model.Sleeves.ToList())
             {
                 @Html.Partial("SleeveSummary", sleeve);
-
             }
         </div>
     </div>
