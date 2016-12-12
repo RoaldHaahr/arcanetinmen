@@ -1,25 +1,7 @@
 ﻿@model ArcaneTinmen.Models.Sleeve
 
-@*<div class="row">
-    <div class="col-md-4">
-        <strong>Name:</strong><p>@Model.Name</p><br />
-        <strong>Description:</strong><p>@Model.Description</p><br />
-        <strong>Height:</strong><p>@Model.Height</p><br />
-        <strong>Widht:</strong><p>@Model.Width</p><br />
-        <strong>Amount:</strong><p>@Model.StockAmount</p><br />
-    </div>
-
-    <div class="col-md-7">
-        @using (Html.BeginForm("AddToCart", "Cart"))
-        {
-            @Html.Hidden("SleeveId", Model.SleeveId)
-            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-            <input type="submit" class="btn btn-success" value="Add to cart" />
-        }
-    </div>
-</div>*@
 @*style="transform: rotate(-12.5deg) translateY(35px)"*@
-<a href="#" class="sleeve" data-name="@Model.Name" date-description="@Model.Description" data-width="@Model.Width" data-height="@Model.Height">
+<a href="#" class="sleeve" data-id="@Model.SleeveId" data-name="@Model.Name" date-description="@Model.Description" data-width="@Model.Width" data-height="@Model.Height">
     <div class="card" style="background-image: url('/dist/img/sleeves/@Model.CardImageFileName'); width: calc(3.779528 * @(Model.Width)px); height: calc(3.779528 * @(Model.Height)px);">
         <h3>
             @Model.Name
@@ -29,7 +11,7 @@
 {
         @Html.Hidden("SleeveId", Model.SleeveId)
         @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-        <input type="submit" class="btn btn-success" value="Add to cart" />
+        <input type="submit" class="cart-cta" value="Add to cart" />
 }
     </div>
 </a>

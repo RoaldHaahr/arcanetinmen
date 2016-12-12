@@ -1,0 +1,90 @@
+.modal {
+	position: absolute;
+	left: calc(50% - #{$modal-width} / 2);
+	background-color: rgba(0, 0, 0, .35);
+	width: $modal-width;
+	height: auto;
+	border-radius: 10px;
+	z-index: 1;
+	border: 6px solid rgba(0,0,0, .5);
+	.modal-inner {
+		padding: 2em;
+		border-radius: 10px;
+	}
+	&.modal-sleeve {
+		top: 0;
+		padding-top: 1em;
+		.modal-inner {
+			overflow: auto;
+			zoom: 1;
+		}
+		.sleeve {
+			display: inline-block;
+			margin-top: 70px;
+			margin-right: 0;
+			float: left;
+			z-index: 1;
+			&:hover {
+				top: 0;
+			}
+			.card {
+				top: -100px;
+			}
+		}
+	}
+	.modal-dl {
+		float: left;
+		margin-left: 100px;
+		h2 {
+			margin-top: 0;
+			text-align: left;
+		}
+		dl {
+			margin-bottom: 60px;
+			font-size: 1.5em;
+			letter-spacing: .1em;
+			dt {
+				padding: .2em;
+				width: 200px;
+				color: white;
+				@include text-border(2px, black);
+				float: left;
+				&.dl-price {
+					color: $green;
+				}
+			}
+			dd {
+				padding: .2em;
+				color: white;
+				@include text-border(2px, black);
+				&.dl-price {
+					color: $green;
+				}
+			}
+		}
+		input[type=number] {
+			padding: .2em;
+			width: 170px;
+			margin-right: 30px;
+			background-color: rgba(0,0,0,.4);
+			border-radius: 5px;
+			border: 2px solid black;
+			color: $green;
+			font-size: 2em;
+			@include text-border(1px, black);
+
+		}
+		input[type=submit] {
+			background: linear-gradient(to bottom, #ED6609, darken(#ED6609,8%));
+			padding: 10px;
+			color: white;
+			text-transform: uppercase;
+			border: none;
+			border-radius: 5px;
+			font-size: 1.5em;
+			font-weight: 700;
+			letter-spacing: .12em;
+
+		}
+	}
+}
