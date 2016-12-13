@@ -67,7 +67,7 @@
                         </dd>
                     </dl>
                     <form action="/Cart/AddToCart" method="post" class="order-controls">
-                        @Html.Hidden("SleeveId", "AT-10406")
+                        <input id="js-sleeve-id-hidden" name="SleeveId" type="hidden" value="">
                         @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
                         <input type="number" value="1" id="js-sleeve-order-amount" name="SleeveAmount" />
                         <input type="submit" class="btn btn-orange" value="Add to cart" />

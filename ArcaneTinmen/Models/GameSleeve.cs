@@ -16,8 +16,8 @@ namespace ArcaneTinmen.Models
         [Required]
         public int GameId { get; set; }
 
-        public Sleeve Sleeve { get; set; }
-        public Game Game { get; set; }
+        public virtual Sleeve Sleeve { get; set; }
+        public virtual Game Game { get; set; }
 
         public GameSleeve() {}
 

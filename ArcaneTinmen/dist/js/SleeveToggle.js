@@ -6,13 +6,17 @@ $(document).ready(function() {
 		}
 		var width = 2.8 * $(this).attr('data-width');
 		var height = 2.8 * $(this).attr('data-height');
+		var id = $(this).attr('data-id');
 		$('.js-sleeve-name').html($(this).attr('data-name'));
 		$('#js-sleeve-price').html($(this).attr('data-price'));
-		$('#js-sleeve-id').html($(this).attr('data-id'));
+		$('#js-sleeve-id').html(id);
 		$('#js-sleeve-description').html($(this).attr('data-description'));
 		$('#js-sleeve-dimensions').html($(this).attr('data-width') + ' x ' + $(this).attr('data-height') + ' mm');
 		$('#js-sleeve-stock').html($(this).attr('data-stock'));
 		$('#js-sleeve-games').html($(this).attr('data-games'));
+		$('#js-sleeve-id-hidden').attr({
+			"value":id
+		});
 		$('#js-sleeve-card').css({
 			'background-image': 'url(/dist/img/sleeves/' + $(this).attr('data-card') + ')',
 			'width': width,
