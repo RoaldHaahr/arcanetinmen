@@ -24,7 +24,6 @@ namespace ArcaneTinmen.Models
 
         public string BadgeImageFileName { get; set; }
 
-        public virtual ICollection<OrderLine> OrderLines { get; set; }
         public virtual ICollection<GameSleeve> GameSleeves { get; set; }
 
         public Sleeve() {}

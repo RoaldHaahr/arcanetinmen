@@ -60,7 +60,8 @@ namespace ArcaneTinmen.Controllers
         }
 
         [HttpPost]
-        public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
+        [ValidateAntiForgeryToken]
+        public ViewResult Checkout(Cart cart, [Bind(Include = "FirstName,Lastname,Address,Zip,City,Country,Email")] ShippingDetails shippingDetails)
         {
             if (cart.Lines.Count() == 0)
             {
@@ -68,7 +69,14 @@ namespace ArcaneTinmen.Controllers
             }
             if (ModelState.IsValid)
             {
+                db.ShippingDetails.Add(shippingDetails);
+                db.SaveChanges();
                 // order processing logic
+                /*     db.ShippingDetails.Add(new ShippingDetails
+                     {
+                         Firstname = shippingDetails.Firstname;
+                     }); */
+
                 cart.Clear();
                 return View("Completed");
             }
