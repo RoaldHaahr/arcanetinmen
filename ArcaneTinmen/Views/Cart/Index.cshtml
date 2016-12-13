@@ -32,7 +32,7 @@
                                 {
                                     @Html.Hidden("ProductId", line.Sleeve.SleeveId)
                                     @Html.HiddenFor(x => x.ReturnUrl)
-                                    <input class="btn btn-sm btn-warning"
+                                    <input class="crazybuttonRed"
                                            type="submit" value="Remove" />
                                 }
                             </td>
@@ -49,8 +49,8 @@
                 </tfoot>
             </table>
             <div class="text-center">
-                <button class="btn btn-orange" href="@Model.ReturnUrl" style="float:left;margin-left: 10%;margin-top: 5%;">Continue shopping</button>
-                @Html.ActionLink("Checkout now", "Checkout", null, new { @class = "btn btn-orange", @style = "float:right; margin-right: 10%;margin-top: 5%;" })
+                <Button class="crazybuttonOrange" href="@Model.ReturnUrl" style="float:left;margin-left: 10%;margin-top: 5%;">Continue shopping</Button>
+                @Html.ActionLink("Checkout now", "Checkout", null, new { @class = "crazybuttonOrange", @style = "float:right; margin-right: 10%;margin-top: 5%;" })
             </div>
         </div>
     </div>
