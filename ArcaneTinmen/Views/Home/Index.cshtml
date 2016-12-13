@@ -101,7 +101,42 @@
                 classes: {
                     "ui-autocomplete": "highlight"
                 },
-            });
+                select: function (event, ui) {
+                    event.preventDefault();
+                    $("#searchForGame").val(ui.item.label);
+                    var id = ui.item.value;
+                    $('.sleeve').each(function () {
+                        $(this).css({
+                            'top': 0
+                        });
+                        $(this).find('.sleeve-overlay').css({
+                            'background-color': 'rgba(0,0,0,.5)',
+                            'border-color': '#000'
+                        });
+                        if ($(this).attr('data-id') == id) {
+                            $(this).css({
+                                'top': -70
+                            });
+                            $(this).find('.sleeve-overlay').css({
+                                'background-color': 'rgba(255,255,255,.2)',
+                                'border-color': '#FFF'
+                            });
+                        }
+                    });
+                }
+            }).focus(function() {
+                $('.sleeves-section').find('.sleeve-overlay').css({
+                    'background-color': 'rgba(0,0,0,.5)',
+                    'border-color': '#000'
+                });
+            }).blur(function () {
+                $('.sleeves-section').find('.sleeve').css('top', 0).find('.sleeve-overlay').css({
+                    'background-color': 'rgba(255,255,255,.2)',
+                    'border-color': '#FFF'
+                });
+            }).data("ui-autocomplete")._renderItem = function(ul, item) {
+                return $("<li>").append("<a class=\"js-game\" data-id=\"" + item.value + "\">" + item.label + "</a>").appendTo(ul);
+            }
         });
     };
 </script>

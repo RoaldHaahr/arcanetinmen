@@ -24,11 +24,7 @@
 	margin-right: -50px;
 	padding: 4px;
 	text-align: center;
-	background-color: rgba(255,255,255,.6);
-	border-left-width: 1px;
-	border-top-width: 1px;
-	border-style: solid;
-	border-color: white;
+	
 	-webkit-transition: top 2s;
 	transition: top .3s, z-index .3s;
 	z-index: 30000;
@@ -37,10 +33,21 @@
 		text-decoration: none;
 	}
 	&:hover {
-		top: -30px;
+		top: -70px !important;
 	}
 	&:last-child {
 		margin-right: 0;
+	}
+	.sleeve-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		border-top: 1px solid white;
+		border-left: 1px solid white;
+		background: rgba(255, 255, 255, 0.2);
+		z-index: 2;
 	}
 	> .card {
 		position: relative;

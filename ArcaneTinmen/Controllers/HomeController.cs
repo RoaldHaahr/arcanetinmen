@@ -60,7 +60,7 @@ namespace ArcaneTinmen.Controllers
                   .ToList();
 
             var sendmeplz = db.Games.Where(x => x.Name.StartsWith(term)).
-                Select(y => new { label = y.Name, cool = y.SleeveId}).ToArray();
+                Select(y => new { label = y.Name, value = y.SleeveId}).ToArray();
 
              
 

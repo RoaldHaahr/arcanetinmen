@@ -344,16 +344,6 @@ nav ul li a {
       float: none; }
       .modal.modal-sleeve .sleeve:hover {
         top: 0; }
-      .modal.modal-sleeve .sleeve .sleeve-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        border-top: 1px solid white;
-        border-left: 1px solid white;
-        background: rgba(255, 255, 255, 0.6);
-        z-index: 2; }
       .modal.modal-sleeve .sleeve .card {
         max-width: 100%;
         max-height: 100%;
@@ -539,11 +529,6 @@ div.form {
   margin-right: -50px;
   padding: 4px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-left-width: 1px;
-  border-top-width: 1px;
-  border-style: solid;
-  border-color: white;
   -webkit-transition: top 2s;
   transition: top .3s, z-index .3s;
   z-index: 30000;
@@ -551,9 +536,19 @@ div.form {
   .sleeve:visited {
     text-decoration: none; }
   .sleeve:hover {
-    top: -30px; }
+    top: -70px !important; }
   .sleeve:last-child {
     margin-right: 0; }
+  .sleeve .sleeve-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 2; }
   .sleeve > .card {
     position: relative;
     display: block;
