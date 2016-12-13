@@ -6,25 +6,26 @@ namespace ArcaneTinmen.Models
 {
     public class Sleeve
     {
-        [Key]
+        //[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string SleeveId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        [Required(ErrorMessage = "Please enter a height in millimeters")]
+        //[Required(ErrorMessage = "Please enter a height in millimeters")]
         public int Height { get; set; }
-        [Required(ErrorMessage = "Please enter a width in millimeters")]
+        //[Required(ErrorMessage = "Please enter a width in millimeters")]
         public int Width { get; set; }
-        [Required(ErrorMessage = "Please enter the price for the sleeve")]
+        //[Required(ErrorMessage = "Please enter the price for the sleeve")]
         public decimal SalePrice { get; set; }
-        [Required(ErrorMessage = "Please enter the amount of sleeves in stock")]
+        //[Required(ErrorMessage = "Please enter the amount of sleeves in stock")]
         public int StockAmount { get; set; }
 
         public string CardImageFileName { get; set; }
 
         public string BadgeImageFileName { get; set; }
 
-        public virtual ICollection<GameSleeve> GameSleeves { get; set; }
+        //public List<OrderLine> OrderLines { get; set; }
+        //public virtual ICollection<GameSleeve> GameSleeves { get; set; }
 
         public Sleeve() {}
 

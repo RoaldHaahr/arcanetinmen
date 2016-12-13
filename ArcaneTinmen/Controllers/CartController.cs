@@ -6,6 +6,7 @@ using ArcaneTinmen.DAL;
 using ArcaneTinmen.Models;
 using System.Web.Mvc;
 using ArcaneTinmen.ViewModels;
+using System.Data.Entity;
 
 namespace ArcaneTinmen.Controllers
 {
@@ -69,7 +70,32 @@ namespace ArcaneTinmen.Controllers
             }
             if (ModelState.IsValid)
             {
-                db.ShippingDetails.Add(shippingDetails);
+                Customer customer = new Customer
+                {
+                    Firstname = shippingDetails.Firstname,
+                    Lastname = shippingDetails.Lastname,
+                    Address = shippingDetails.Address,
+                    Zip = shippingDetails.Zip,
+                    Email = shippingDetails.Email
+                };
+
+                if (db.Customers.Any(s => s.Firstname == shippingDetails.Firstname && s.Lastname == shippingDetails.Lastname && s.Email == shippingDetails.Email))
+                {
+                    customer = db.Customers.Where(c => c.Firstname == customer.Firstname && c.Lastname == customer.Lastname && c.Email == customer.Email).First();
+                    customer.Address = shippingDetails.Address;
+                    customer.Zip = shippingDetails.Zip;
+                    db.Entry(customer).State = EntityState.Modified;
+                }
+                Order order = new Order(DateTime.Now, customer);
+
+                foreach(CartLine cartLine in cart.Lines)
+                {
+                    OrderLine orderLine = new OrderLine(cartLine.Sleeve, cartLine.Quantity);
+                    orderLine.SleeveId = cartLine.Sleeve.SleeveId;
+                    orderLine.Sleeve = null;
+                    order.OrderLines.Add(orderLine);
+                }
+                db.Orders.Add(order);
                 db.SaveChanges();
                 // order processing logic
                 /*     db.ShippingDetails.Add(new ShippingDetails
