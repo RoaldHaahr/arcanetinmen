@@ -8,12 +8,14 @@
     double SleeveAngle = (SleeveCount * 5 / 2 - SleeveCount * 5) - 2.5;
 }
 
+
+
 <section class="section form-search">
     <form action="index_submit" method="get" accept-charset="utf-8">
         <h2>Find Your Fit</h2>
         <div class="input-field input-field-search">
             <span class="icon icon-search"></span>
-            <input type="search" name="Search Sleeves" placeholder="Insert Board Game Name ...">
+            <input type="search" name="Search Sleeves" id="searchForGame" placeholder="Insert Board Game Name ...">
         </div>
         <p class="section-divider">or</p>
         <h2>Pick Your Sleeve</h2>
@@ -87,6 +89,20 @@
             }
         </div>
     </div>
+    <div class="someElem" style="display:none;"></div>
 </section>
 
+<script>
+    window.onload = function () {
+        $(function () {
+            $("#searchForGame").autocomplete({
+                source: '@Url.Action("GetGames")',
+                minLength: 2,
+                classes: {
+                    "ui-autocomplete": "highlight"
+                }
+            });
+        });
+    };
+</script>
 

@@ -165,7 +165,39 @@ namespace ArcaneTinmen.Migrations
             sleeves.ForEach(s => context.Sleeves.AddOrUpdate(s));
             context.SaveChanges();
 
-            List<Account> accounts = new List<Account>
+            List<Game> games = new List<Game>
+            {
+                new Game
+                {
+                    GameId = 1,
+                    Name = "Hero Quest",
+                },
+                new Game
+                {
+                    GameId = 2,
+                    Name = "Hero Quest",
+                },
+                new Game
+                {
+                    GameId = 3,
+                    Name = "Hero Quest",
+                },
+                new Game
+                {
+                    GameId = 4,
+                    Name = "Hero Quest",
+                },
+                new Game
+                {
+                    GameId = 5,
+                    Name = "Hero Quest",
+                }
+            };
+
+            games.ForEach(a => context.Games.AddOrUpdate(a));
+            context.SaveChanges();
+
+            List <Account> accounts = new List<Account>
             {
                 new Account
                 {

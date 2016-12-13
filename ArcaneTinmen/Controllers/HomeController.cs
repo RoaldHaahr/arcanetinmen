@@ -2,6 +2,8 @@
 using ArcaneTinmen.ViewModels;
 using System.Linq;
 using System.Web.Mvc;
+using ArcaneTinmen.Models;
+using System.Collections.Generic;
 
 namespace ArcaneTinmen.Controllers
 {
@@ -18,6 +20,39 @@ namespace ArcaneTinmen.Controllers
                 Sleeves = db.Sleeves.ToList()
             };
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(string searchTerm)
+        {
+            ArcaneTinmenContext db = new ArcaneTinmenContext();
+            List<Game> games;
+
+            if(string.IsNullOrEmpty(searchTerm))
+            {
+                games = db.Games.ToList();
+            }
+            else
+            {
+                games = db.Games.Where(x => x.Name.StartsWith(searchTerm)).ToList();
+            }
+            return View(games);            
+        }
+
+        public JsonResult GetGames(string term)
+        {
+            ArcaneTinmenContext db = new ArcaneTinmenContext();
+            List<string> games;
+
+            games = db.Games.Where(x => x.Name.StartsWith(term))
+                .Select(y => y.Name).ToList();
+
+         //  gamesleeves = Sleeveid + GameName.
+
+
+       
+            return Json(games, JsonRequestBehavior.AllowGet);
+
         }
     }
 }
