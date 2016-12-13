@@ -26,5 +26,5 @@ $(document).ready(function() {
 	$('.js-modal-close').on('click', function() {
 		$(this).parent('.modal').hide();
 		$('.form-search form').show();
-	})
+	});
 });

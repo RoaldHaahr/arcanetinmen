@@ -6,8 +6,8 @@
     double DimensionMultiplier = 3;
 }
 
-@*style="transform: rotate(-12.5deg) translateY(35px)"*@
 <a href="#" class="sleeve" data-id="@Model.Key.SleeveId" data-price="@Model.Key.SalePrice" data-name="@Model.Key.Name" data-description="@Model.Key.Description" data-width="@Model.Key.Width" data-height="@Model.Key.Height" data-stock="@Model.Key.StockAmount" data-card="@Model.Key.CardImageFileName" data-badge="@Model.Key.BadgeImageFileName" style="transform: rotate(@(Model.Value)deg)">
+    <div class="sleeve-overlay"></div>
     <div class="card" style="background-image: url('/dist/img/sleeves/@Model.Key.CardImageFileName'); width: calc(@DimensionMultiplier * @(Model.Key.Width)px); height: calc(@DimensionMultiplier * @(Model.Key.Height)px);">
         <h3>
             @Model.Key.Name
