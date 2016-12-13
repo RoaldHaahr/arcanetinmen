@@ -42,16 +42,33 @@ namespace ArcaneTinmen.Controllers
         public JsonResult GetGames(string term)
         {
             ArcaneTinmenContext db = new ArcaneTinmenContext();
+
             List<string> games;
+            List<string> sleeves;
+
 
             games = db.Games.Where(x => x.Name.StartsWith(term))
-                .Select(y => y.Name).ToList();
+                .Select(y => y.Name )
+                .ToList();
 
-         //  gamesleeves = Sleeveid + GameName.
+            /* 
+             *  Replace for multi value + id
+             *  */
+               
+               sleeves = db.Games.Where(x => x.Name.StartsWith(term))
+                  .Select(s => s.SleeveId)
+                  .ToList();
 
+            var sendmeplz = db.Games.Where(x => x.Name.StartsWith(term)).
+                Select(y => new { label = y.Name, cool = y.SleeveId}).ToArray();
 
-       
-            return Json(games, JsonRequestBehavior.AllowGet);
+             
+
+               return Json(sendmeplz, JsonRequestBehavior.AllowGet);   
+
+              
+            /*
+            return Json(games, JsonRequestBehavior.AllowGet); */
 
         }
     }

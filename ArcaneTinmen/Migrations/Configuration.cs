@@ -170,28 +170,87 @@ namespace ArcaneTinmen.Migrations
                 new Game
                 {
                     GameId = 1,
-                    Name = "Hero Quest",
+                    SleeveId = "AT-10407",
+                    Name = "Hero Quest"
                 },
                 new Game
                 {
                     GameId = 2,
-                    Name = "Hero Quest",
+                    SleeveId = "AT-10409",
+                    Name = "Scythe"
                 },
                 new Game
                 {
                     GameId = 3,
-                    Name = "Hero Quest",
+                    SleeveId = "AT-10408",
+                    Name = "Dominion"
                 },
                 new Game
                 {
                     GameId = 4,
-                    Name = "Hero Quest",
+                    SleeveId = "AT-10409",
+                    Name = "Falling Sky"
                 },
                 new Game
                 {
                     GameId = 5,
-                    Name = "Hero Quest",
-                }
+                    SleeveId = "AT-10407",
+                    Name = "Grand Austria Hotel",
+                },
+                new Game
+                {
+                    GameId = 6,
+                    SleeveId = "AT-10405",
+                    Name = "Dungeon and Dragons",
+                },
+                new Game
+                {
+                    GameId = 3,
+                    SleeveId = "AT-10404",
+                    Name = "Thunder and Lightning",
+                },
+                new Game
+                {
+                    GameId = 7,
+                    SleeveId = "AT-10407",
+                    Name = "Star Wars Rebellion",
+                },
+                new Game
+                {
+                    GameId = 8,
+                    SleeveId = "AT-10408",
+                    Name = "Settlers of Catan",
+                },
+                new Game
+                {
+                    GameId = 9,
+                    SleeveId = "AT-10402",
+                    Name = "Trivial Pursuit",
+                },
+                new Game
+                {
+                    GameId = 10,
+                    SleeveId = "AT-10402",
+                    Name = "Monopoly",
+                },
+                new Game
+                {
+                    GameId = 11,
+                    SleeveId = "AT-10408",
+                    Name = "Risk",
+                },
+                new Game
+                {
+                    GameId = 12,
+                    SleeveId = "AT-10409",
+                    Name = "Uno",
+                },
+                new Game
+                {
+                    GameId = 13,
+                    SleeveId = "AT-10406",
+                    Name = "Best Game",
+                },
             };
 
             games.ForEach(a => context.Games.AddOrUpdate(a));

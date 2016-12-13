@@ -93,14 +93,14 @@
 </section>
 
 <script>
-    window.onload = function () {
+    window.onload = function (ul) {
         $(function () {
             $("#searchForGame").autocomplete({
                 source: '@Url.Action("GetGames")',
-                minLength: 2,
+                minLength: 1,
                 classes: {
                     "ui-autocomplete": "highlight"
-                }
+                },
             });
         });
     };
