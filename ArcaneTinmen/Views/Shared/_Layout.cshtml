@@ -10,24 +10,30 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="~/scripts/jquery-1.10.2.min.js"></script>
     <script src="~/dist/js/SleeveToggle.js"></script>
+    <script src="~/dist/js/MenuToggle.js"></script>
 </head>
 <body>
     <header>
         <figure>
-            <img src="~/dist/img/logo.svg" alt="Logo">
+            <a href="~/Home/Index">
+                <img src="~/dist/img/logo.svg" alt="Logo">
+            </a>
         </figure>
         <div class="page-title">
-            <a href="~/Index.cshtml"><h1 class="hideOnMobile">Board Game Sleeves</h1></a>
+            <a href="~/Home/Index"><h1 class="hideOnMobile">Board Game Sleeves</h1></a>
         </div>
-        <nav>
+        <nav class="site-nav">
             <ul>
-                <li><a href="#" title="">Buy Sleeves</a></li>
-                <li><a href="#" title="">About</a></li>
-                <li><a href="#" title="">Contact</a></li>
-                <li><a href="#" title="">Login User</a></li>
+                <li>@Html.ActionLink("Buy sleeves", "Index", "Sleeve")</li>
+                <li>@Html.ActionLink("About us", "Index", "About")</li>
+                <li>@Html.ActionLink("Contact us", "Index", "Contact")</li>
                 <li>@Html.Action("Summary", "Cart")</li>
             </ul>
         </nav>
+        <div class="mobile-menu-toggle">
+            <button class="mobile-menu-open">&#9776;</button>
+            <button class="mobile-menu-close">&#735;</button>
+        </div>
     </header>
     <main>
         @RenderBody()

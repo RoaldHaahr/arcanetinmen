@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Contact us";
+}
+
+<section class="section section-form">
+    <div class="form form-contact">
+        <h2>Contact Us:</h2>
+
+        <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+            <label>
+                <span>Your Name</span><input id="name" type="text" name="name" />
+            </label>
+            <label>
+                <span>Email Address</span><input id="email" type="text" name="email" />
+            </label>
+            <label>
+                <span>Subject</span><input id="subject" type="text" name="subject" />
+            </label>
+            <label>
+                <span>Message</span><textarea id="feedback" name="feedback"></textarea>
+                <input type="Submit" value="Send" />
+            </label>
+        </form>
+    </div>
+</section>
+
+

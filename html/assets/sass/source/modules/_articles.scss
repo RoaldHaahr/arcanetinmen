@@ -1,0 +1,22 @@
+.article-text {
+	article {
+		margin: 0 auto;
+		padding: 1em;
+		width: 1024px;
+		max-width: 100%;
+		h2 {
+			@media screen and (max-width: 767px) {
+				margin: 16px 0;
+			}
+			margin: 36px 0;
+			text-align: center;
+		}
+		p {
+			font-family: 'Kiye', sans-serif;
+			font-size: 20px;
+			color: white;
+			text-align: justify;
+			padding: 5px 5px 5px 5px;
+		}
+	}
+}

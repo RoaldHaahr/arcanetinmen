@@ -1,18 +1,17 @@
 ﻿@model KeyValuePair<Sleeve, Double>
 @using ArcaneTinmen.Models
 
+@{
+    //double DimensionMultiplier = 3.779528;
+    double DimensionMultiplier = 3;
+}
+
 @*style="transform: rotate(-12.5deg) translateY(35px)"*@
 <a href="#" class="sleeve" data-id="@Model.Key.SleeveId" data-price="@Model.Key.SalePrice" data-name="@Model.Key.Name" data-description="@Model.Key.Description" data-width="@Model.Key.Width" data-height="@Model.Key.Height" data-stock="@Model.Key.StockAmount" data-card="@Model.Key.CardImageFileName" data-badge="@Model.Key.BadgeImageFileName" style="transform: rotate(@(Model.Value)deg)">
-    <div class="card" style="background-image: url('/dist/img/sleeves/@Model.Key.CardImageFileName'); width: calc(3.779528 * @(Model.Key.Width)px); height: calc(3.779528 * @(Model.Key.Height)px);">
+    <div class="card" style="background-image: url('/dist/img/sleeves/@Model.Key.CardImageFileName'); width: calc(@DimensionMultiplier * @(Model.Key.Width)px); height: calc(@DimensionMultiplier * @(Model.Key.Height)px);">
         <h3>
             @Model.Key.Name
         </h3>
         <img src="~/dist/img/sleeves/@Model.Key.BadgeImageFileName" alt="Small">
-@using (Html.BeginForm("AddToCart", "Cart"))
-{
-        @Html.Hidden("SleeveId", Model.Key.SleeveId)
-        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-        <input type="submit" class="cart-cta" value="Add to cart" />
-}
     </div>
 </a>

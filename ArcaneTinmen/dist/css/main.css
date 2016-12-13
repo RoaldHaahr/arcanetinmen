@@ -48,14 +48,20 @@ table {
 * {
   box-sizing: border-box; }
 
-html, body {
-  height: 100%;
-  overflow: hidden; }
+img {
+  max-width: 100%; }
+
+@media screen and (min-width: 768px) {
+  html, body {
+    height: 100%; } }
 
 body {
   padding: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/background.jpg");
-  background-size: 100%; }
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/background.jpg"); }
+  @media screen and (max-width: 767px) {
+    body {
+      background-size: cover;
+      background-repeat: no-repeat; } }
 
 @font-face {
   font-family: Kiye;
@@ -154,128 +160,166 @@ h3 {
 .link-bar {
   padding: 1em 0; }
 
-/*
-article {
-	margin: 0 auto;
-	width: 1024px;
-	h1 {
-		text-align: center;
-	}
-	p {
-		font-family: 'Kiye', sans-serif;
-		font-size: 20px;
-		color: white;
-		text-align: justify;
-		padding: 5px 5px 5px 5px;
-	}
-}
-*/
-/*h2 {
-  text-align: center;
-}
+.article-text article {
+  margin: 0 auto;
+  padding: 1em;
+  width: 1024px;
+  max-width: 100%; }
+  .article-text article h2 {
+    margin: 36px 0;
+    text-align: center; }
+    @media screen and (max-width: 767px) {
+      .article-text article h2 {
+        margin: 16px 0; } }
+  .article-text article p {
+    font-family: 'Kiye', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+    padding: 5px 5px 5px 5px; }
 
-form {
-
-  margin: auto;
-  position: relative;
-  width: 550px;
-  height: 450px;
-  font-family: 'Kiye', sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: bold;
-  color: #FFFFFF;
-  text-decoration: none;
-  border-radius: 10px;
-  padding: 10px;
-  border: 1px solid #999;
-  // border: inset 1px solid #333;
-  background-color: rgba(0,0,0,.2);
-
-}
-
-input {
-  width: 375px;
-  display: block;
-  border: 1px solid #999;
-  height: 25px;
-  background-color: rgba(0,0,0,.2);
-  color: white;
-  border-radius: 4px;
-}
-
-textarea#feedback {
-  width: 375px;
-  height: 150px;
-  display: block;
-  background-color: rgba(0,0,0,.2);
-}
-
-button {
-  width: 100px;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  background: #09C;
-  color: #fff;
-  font-family: 'Kiye', sans-serif;
-  height: 30px;
-  border-radius: 15px;
-  border: 1p solid #999;
-}
-
-input.button:hover {
-  background: #fff;
-  color: #09C;
-}*/
 header {
   position: relative;
   padding: 10px;
   background-color: #242424; }
+  @media screen and (max-width: 1440px) {
+    header {
+      min-height: 100px; } }
   header figure {
     display: inline-block;
     height: 160px; }
+    @media screen and (max-width: 1440px) {
+      header figure {
+        height: 100px; } }
     header figure img {
       max-height: 100%; }
   header .page-title {
-    display: inline-block;
     position: relative;
     height: 100%;
     width: 600px; }
+    @media screen and (min-width: 1401px) {
+      header .page-title {
+        display: inline-block; } }
+    @media screen and (max-width: 1440px) {
+      header .page-title {
+        display: none; } }
   header h1 {
     position: absolute;
     bottom: 17px;
     color: #fff;
     text-transform: uppercase;
     font-size: 50px; }
-  header nav {
+  @media screen and (min-width: 768px) {
+    header nav {
+      display: block !important;
+      position: absolute;
+      top: calc(50% - 18px); } }
+  @media screen and (min-width: 768px) and (max-width: 1440px) {
+    header nav {
+      right: 10px; } }
+  @media screen and (min-width: 1441px) {
+    header nav {
+      right: 50px; } }
+  @media screen and (max-width: 767px) {
+    header nav {
+      display: none; } }
+  header .mobile-menu-toggle {
     position: absolute;
-    top: calc(50% - 18px);
-    right: 50px; }
+    top: 10px;
+    right: 10px;
+    padding: 26px 27px;
+    height: 100px;
+    width: 100px;
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      header .mobile-menu-toggle {
+        display: none; } }
+    header .mobile-menu-toggle .mobile-menu-open {
+      color: #fff;
+      border: 0;
+      font-size: 2.4em;
+      font-weight: bold;
+      background: none;
+      cursor: pointer;
+      outline: none;
+      z-index: 10000000000000;
+      background-color: transparent;
+      line-height: 1em;
+      height: 46px;
+      width: 48px; }
+    header .mobile-menu-toggle .mobile-menu-close {
+      display: none;
+      background: none;
+      color: #fff;
+      border: 0;
+      font-size: 5.5em;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      z-index: 10000000000000;
+      height: 48px;
+      width: 46px;
+      line-height: 1em; }
 
-nav ul li {
-  display: inline-block;
-  padding: 0 31px; }
-  nav ul li a {
-    padding: 12px;
-    color: #fff;
-    font-size: 1.571429em;
-    text-decoration: none;
-    text-transform: uppercase; }
-    nav ul li a.active {
-      text-decoration: underline; }
-    nav ul li a:hover {
-      border-bottom: 3px solid #0772BA; }
+@media screen and (min-width: 768px) {
+  nav ul li {
+    display: inline-block; } }
+
+@media screen and (max-width: 767px) {
+  nav ul li {
+    text-align: right; } }
+
+@media screen and (min-width: 1201px) {
+  nav ul li {
+    padding: 0 31px; } }
+
+@media screen and (max-width: 1200px) {
+  nav ul li {
+    padding: 0 14px; } }
+
+@media screen and (max-width: 1023px) {
+  nav ul li {
+    padding: 0 10px; } }
+
+@media screen and (max-width: 767px) {
+  nav ul li {
+    padding: 1em 0; } }
+
+nav ul li .navbar-right {
+  padding-right: 0 !important; }
+
+nav ul li a {
+  padding: 12px;
+  color: #fff;
+  font-size: 1.571429em;
+  text-decoration: none;
+  text-transform: uppercase; }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    nav ul li a {
+      font-size: 1em; } }
+  nav ul li a.active {
+    text-decoration: underline; }
+  nav ul li a:hover {
+    border-bottom: 3px solid #0772BA; }
 
 .modal {
   position: absolute;
-  left: calc(50% - 1000px / 2);
+  left: calc(50% - 1200px / 2);
   background-color: rgba(0, 0, 0, 0.35);
-  width: 1000px;
+  width: 1200px;
   height: auto;
+  max-width: 100%;
   border-radius: 10px;
   z-index: 1;
   border: 6px solid rgba(0, 0, 0, 0.5); }
+  .modal .modal-close {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    cursor: pointer; }
+    .modal .modal-close img {
+      width: 32px;
+      height: auto; }
   .modal .modal-inner {
     padding: 2em;
     border-radius: 10px; }
@@ -285,19 +329,39 @@ nav ul li {
     .modal.modal-sleeve .modal-inner {
       overflow: auto;
       zoom: 1; }
+    .modal.modal-sleeve .sleeve-img {
+      width: 25%;
+      float: left; }
     .modal.modal-sleeve .sleeve {
-      display: inline-block;
+      max-width: 100%;
+      background-color: transparent;
+      border: none;
+      display: block;
       margin-top: 70px;
-      margin-right: 0;
-      float: left;
-      z-index: 1; }
+      margin-right: auto;
+      margin-left: auto;
+      z-index: 1;
+      float: none; }
       .modal.modal-sleeve .sleeve:hover {
         top: 0; }
+      .modal.modal-sleeve .sleeve .sleeve-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-top: 1px solid white;
+        border-left: 1px solid white;
+        background: rgba(255, 255, 255, 0.6);
+        z-index: 2; }
       .modal.modal-sleeve .sleeve .card {
-        top: -100px; }
+        max-width: 100%;
+        max-height: 100%;
+        top: -70px; }
   .modal .modal-dl {
-    float: left;
-    margin-left: 100px; }
+    margin-left: 2em;
+    width: calc(75% - 2em);
+    float: right; }
     .modal .modal-dl h2 {
       margin-top: 0;
       text-align: left; }
@@ -307,7 +371,7 @@ nav ul li {
       letter-spacing: .1em; }
       .modal .modal-dl dl dt {
         padding: .2em;
-        width: 200px;
+        width: 30%;
         color: white;
         text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, 0 2px black, 2px 0 black, 0 -2px black, -2px 0 black;
         float: left; }
@@ -315,40 +379,56 @@ nav ul li {
           color: #91DE40; }
       .modal .modal-dl dl dd {
         padding: .2em;
+        width: 70%;
         color: white;
-        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, 0 2px black, 2px 0 black, 0 -2px black, -2px 0 black; }
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, 0 2px black, 2px 0 black, 0 -2px black, -2px 0 black;
+        float: left; }
         .modal .modal-dl dl dd.dl-price {
           color: #91DE40; }
-    .modal .modal-dl input[type=number] {
-      padding: .2em;
-      width: 170px;
-      margin-right: 30px;
-      background-color: rgba(0, 0, 0, 0.4);
-      border-radius: 5px;
-      border: 2px solid black;
-      color: #91DE40;
-      font-size: 2em;
-      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, -1px 0 black; }
-    .modal .modal-dl input[type=submit] {
-      background: linear-gradient(to bottom, #ED6609, #c65508);
-      padding: 10px;
-      color: white;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 5px;
-      font-size: 1.5em;
-      font-weight: 700;
-      letter-spacing: .12em; }
+    .modal .modal-dl .order-controls {
+      padding-top: 1em;
+      clear: both; }
+      .modal .modal-dl .order-controls input[type=number] {
+        padding: 10px;
+        width: calc(30% - 30px);
+        margin-right: 30px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        border: 2px solid black;
+        color: white;
+        font-size: 1.5em;
+        text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, -1px 0 black; }
+        .modal .modal-dl .order-controls input[type=number]:focus {
+          outline: 0; }
+      .modal .modal-dl .order-controls input[type=submit] {
+        background: linear-gradient(to bottom, #ED6609, #c65508);
+        padding: 10px;
+        color: white;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.5em;
+        letter-spacing: .01em;
+        cursor: pointer; }
+        .modal .modal-dl .order-controls input[type=submit]:focus {
+          outline: 0; }
 
 .form-search {
-  position: relative;
-  margin-top: 60px; }
-  .form-search form {
+  position: relative; }
+  @media screen and (max-width: 1440px) {
+    .form-search {
+      margin-top: 30px; } }
+  @media screen and (min-width: 1441px) {
+    .form-search {
+      margin-top: 60px; } }
+  .form-search > form {
     margin: 0 auto;
     width: 690px; }
-    .form-search form h2 {
+    .form-search > form h2 {
       margin-bottom: 36px;
       text-align: center; }
+    .form-search > form p.section-divider {
+      margin: 36px 0; }
 
 .form-login {
   margin-top: 60px;
@@ -390,10 +470,55 @@ div.form {
   div.form form .link-bar {
     border: none;
     padding-bottom: 0; }
+  div.form.form-contact {
+    background-color: transparent; }
+    div.form.form-contact h2 {
+      margin: 36px 0;
+      text-align: center; }
+    div.form.form-contact form {
+      margin: auto;
+      position: relative;
+      width: 550px;
+      max-width: 100%;
+      font-family: 'Kiye', sans-serif;
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: bold;
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid #999;
+      background-color: rgba(0, 0, 0, 0.2); }
+      div.form.form-contact form span {
+        padding-left: 4px; }
+      div.form.form-contact form input {
+        padding: 6px;
+        width: 100%;
+        display: block;
+        border: 1px solid #999;
+        height: 25px;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: white;
+        border-radius: 4px; }
+        div.form.form-contact form input:focus {
+          outline: none; }
+      div.form.form-contact form textarea#feedback {
+        padding: 6px;
+        width: 100%;
+        height: 150px;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: white; }
+        div.form.form-contact form textarea#feedback:focus {
+          outline: none; }
+    div.form.form-contact input[type=submit] {
+      margin-top: 12px;
+      cursor: pointer; }
 
 .sleeves-section {
-  position: absolute;
-  bottom: -200px;
+  position: fixed;
+  bottom: -190px;
   text-align: center;
   width: 100%; }
   .sleeves-section > div.sleeves-container {
@@ -421,7 +546,10 @@ div.form {
   border-color: white;
   -webkit-transition: top 2s;
   transition: top .3s, z-index .3s;
-  z-index: 30000; }
+  z-index: 30000;
+  text-decoration: none; }
+  .sleeve:visited {
+    text-decoration: none; }
   .sleeve:hover {
     top: -30px; }
   .sleeve:last-child {

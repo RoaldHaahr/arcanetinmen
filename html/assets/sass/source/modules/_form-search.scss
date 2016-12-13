@@ -1,12 +1,21 @@
 .form-search {
 	position: relative;
-	margin-top: 60px;
+	@media screen and (max-width: 1440px) {
+		margin-top: 30px;
+	}
+	@media screen and (min-width: 1441px) {
+		margin-top: 60px;
+	}
+	
 	> form {
 		margin: 0 auto;
 		width: 690px;
 		h2 {
 			margin-bottom: 36px;
 			text-align: center;
+		}
+		p.section-divider {
+			margin: 36px 0
 		}
 	}
 }

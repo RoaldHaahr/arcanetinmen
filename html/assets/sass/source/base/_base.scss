@@ -6,17 +6,27 @@ img {
 	max-width: 100%;
 }
 
+html {
+	
+}
+
 html, body {
+	@media screen and (min-width: 768px) {
 	height: 100%;
-	overflow: hidden;
+
+	}
 }
 body {
 	padding: 0;
 	background:
-		linear-gradient(
-			rgba(0,0,0,.6),
-			rgba(0,0,0,.6)
-			),
-		url('../img/background.jpg');
-	background-size: 100%;
+	linear-gradient(
+		rgba(0,0,0,.6),
+		rgba(0,0,0,.6)
+		),
+	url('../img/background.jpg');
+	@media screen and (max-width: 767px) {
+
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
 }

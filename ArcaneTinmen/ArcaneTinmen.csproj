@@ -179,8 +179,10 @@
     <Compile Include="Areas\Admin\Controllers\AccountsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManagementController.cs" />
     <Compile Include="Areas\Admin\Controllers\SleevesController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SleeveController.cs" />
@@ -233,6 +235,8 @@
     <Content Include="Views\Cart\Completed.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Sleeve\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
