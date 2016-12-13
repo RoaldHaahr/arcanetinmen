@@ -8,6 +8,8 @@ using System.Text;
 using System.Data;
 using System.Net;
 using System.Data.Entity;
+using ArcaneTinmen.ViewModels;
+using System.Linq;
 
 namespace ArcaneTinmen.Controllers
 {
@@ -23,7 +25,8 @@ namespace ArcaneTinmen.Controllers
         // GET: Sleeve
         public ActionResult Index()
         {
-            return View();
+            return View(db.Sleeves.ToList());
+
         }
 
         public ActionResult Details(string id)

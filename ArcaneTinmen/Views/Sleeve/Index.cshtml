@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ArcaneTinmen.Models.Sleeve>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="text-align:center">Sleeves</h2>
+
+<section class="section form-search">
+
+@foreach (var item in Model)
+{
+    <div class="modal modal-sleeve" style="position:relative; margin-bottom:50px" >
+        <a class="modal-close js-modal-close">
+            <img src="/dist/img/icons/btn-close.svg" alt="Close button" />
+        </a>
+        <div class="modal-inner">
+            <article class="article-sleeve article">
+                <div class="sleeve-img">
+                    <div class="sleeve js-sleeve">
+                        <div class="sleeve-overlay"></div>
+                        <div class="card" id="js-sleeve-card">
+                            <h3 class="js-sleeve-name">@Html.DisplayFor(modelItem => item.Name)</h3>
+                            <img id="js-sleeve-badge" src="@Html.DisplayFor(modelItem => item.BadgeImageFileName)" alt="Small">
+                        </div>
+                    </div>
+                </div>
+                <section class="section-dl section sleeve-info modal-dl">
+                    <h2 class="js-sleeve-name"></h2>
+                    <dl>
+                        <dt class="dl-price">
+                            Price:
+                        </dt>
+                        <dd class="dl-price" id="js-sleeve-price">@Html.DisplayFor(modelItem => item.SalePrice)</dd>
+                        <dt>
+                            ProductID:
+                        </dt>
+                        <dd id="js-sleeve-id"></dd>
+                        <dt>
+                            Description:
+                        </dt>
+                        <dd id="js-sleeve-description">@Html.DisplayFor(modelItem => item.Description)</dd>
+                        <dt>
+                            Dimensions:
+                        </dt>
+                        <dd id="js-sleeve-dimensions">@Html.DisplayFor(modelItem => item.Height)@Html.DisplayFor(modelItem => item.Width)</dd>
+                        <dt>
+                            Stock amount:
+                        </dt>
+                        <dd id="js-sleeve-stock">@Html.DisplayFor(modelItem => item.StockAmount)</dd>
+                        <dt>
+                            Fits games like:
+                        </dt>
+                        <dd id="js-sleeve-games">
+                            Munchkin, Monopoly, Risk, Axis of Evil, Dominion
+                        </dd>
+                    </dl>
+                    <form action="/Cart/AddToCart" method="post" class="order-controls">
+                        @Html.Hidden("SleeveId", "AT-10406")
+                        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                        <input type="number" value="1" id="js-sleeve-order-amount" name="SleeveAmount" />
+                        <input type="submit" class="btn btn-orange" value="Add to cart" />
+                    </form>
+
+                </section>
+            </article>
+            <input id="SleeveId" name="SleeveId" type="hidden" value="AT-10403">
+        </div>
+    </div>
+}
+
+ </section>
