@@ -1,18 +1,47 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿
+.crazybuttonOrange {
+    
+    background: linear-gradient(to bottom, #ED6609, #c65508) !important;
+    padding: 10px !important;
+    color: white !important;
+    text-transform: uppercase!important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 1.5em !important;
+    letter-spacing: .01em !important;
+    cursor: pointer !important;
+    text-decoration: none !important
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+
+.crazybuttonRed {
+    
+    background: linear-gradient(to bottom, #e92028, #e92028) !important;
+    padding: 10px !important;
+    color: white !important;
+    text-transform: uppercase!important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 0.5em !important;
+   /*letter-spacing: .01em !important;*/ 
+    cursor: pointer !important;
+    text-decoration: none !important;
+    margin-top:-5% !important;
+    
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.crazybuttonGreen {
+
+    background: linear-gradient(to bottom, #56ab2f, #56ab2f) !important;
+    padding: 10px !important;
+    color: white !important;
+    text-transform: uppercase!important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 1.5em !important;
+    letter-spacing: .01em !important;
+    cursor: pointer !important;
+    text-decoration: none !important
+
 }
 
