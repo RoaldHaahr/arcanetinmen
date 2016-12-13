@@ -22,8 +22,7 @@ namespace ArcaneTinmen
             routes.MapRoute(
               name: null,
               url: "{controller}/Page{page}",
-              defaults: new { controller = "Catalogue", action = "Index", category = (string)null },
-              constraints: new { page = @"\d+" }
+              defaults: new { controller = "Sleeve", action = "Index" }
           );
 
             routes.MapRoute(
