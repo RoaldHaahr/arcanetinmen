@@ -7,9 +7,7 @@ namespace ArcaneTinmen.Models
     {
         [Key]
         public int OrderLineId { get; set; }
-        //[Required]
         public string SleeveId { get; set; }
-        //[Required]
         public int Quantity { get; set; }
         public decimal TotalPrice { get { return Quantity * Sleeve.SalePrice; } }
 

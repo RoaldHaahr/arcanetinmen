@@ -97,4 +97,15 @@
 			padding-bottom: 0;
 		}
 	}
+	&.section-sleeve-list {
+		.sleeve {
+			&:hover {
+				top: 0 !important;
+			}
+			.card {
+				height: 296px;
+				top: 0;
+			}
+		}
+	}
 }

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ArcaneTinmen.Models.Order>
+@using ArcaneTinmen.Models
+@using ArcaneTinmen.DAL
+
+@{
+    ViewBag.Title = "Orders";
+}
+<section class="section section-table">
+    <h2>Orders</h2>
+    <div class="table">
+        <div>
+            <table>
+                <tr>
+                    <th>
+                        Full name
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DatePlaced)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateShipped)
+                    </th>
+                    <th>Sleeves</th>
+                    <th>Amount</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Customer.Firstname) @Html.DisplayFor(modelItem => item.Customer.Lastname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DatePlaced)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateShipped)
+                        </td>
+                        <td>
+                            @foreach(OrderLine orderLine in item.OrderLines)
+                            {
+                                @orderLine.Sleeve.SleeveId
+                                <br />
+                            }
+                        </td>
+                        <td>
+                            @foreach (OrderLine orderLine in item.OrderLines)
+                            {
+                                @orderLine.Quantity
+                                <br />
+                            }
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</section>

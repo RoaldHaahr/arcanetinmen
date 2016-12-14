@@ -85,7 +85,7 @@
             @foreach (Sleeve sleeve in Model.Sleeves.ToList())
             {
                 SleeveAngle += 5;
-                @Html.Partial("SleeveSummary", new KeyValuePair<Sleeve, Double>(sleeve, SleeveAngle))
+                @Html.Partial("_SleeveSummary", new KeyValuePair<Sleeve, Double>(sleeve, SleeveAngle))
             }
         </div>
     </div>

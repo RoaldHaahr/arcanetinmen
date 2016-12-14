@@ -200,6 +200,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Views\Orders\Index.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <None Include="scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="scripts\jquery-1.12.4.js" />
@@ -224,6 +225,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManagementController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Admin\Controllers\SleevesController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -270,7 +272,7 @@
     <Content Include="Views\Cart\Summary.cshtml" />
     <Content Include="Views\ViewPage1.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\SleeveSummary.cshtml" />
+    <Content Include="Views\Shared\_SleeveSummary.cshtml" />
     <Content Include="Views\Sleeve\Create.cshtml" />
     <Content Include="Views\Sleeve\Edit.cshtml" />
     <Content Include="Views\Sleeve\Delete.cshtml" />

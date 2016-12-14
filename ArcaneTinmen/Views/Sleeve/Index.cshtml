@@ -6,27 +6,24 @@
 
 <h2 style="text-align:center">Sleeves</h2>
 
-<section class="section form-search">
+<section class="section form-search section-sleeve-list">
 
 @foreach (var item in Model)
 {
     <div class="modal modal-sleeve" style="position:relative; margin-bottom:50px" >
-        <a class="modal-close js-modal-close">
-            <img src="/dist/img/icons/btn-close.svg" alt="Close button" />
-        </a>
         <div class="modal-inner">
             <article class="article-sleeve article">
                 <div class="sleeve-img">
                     <div class="sleeve js-sleeve">
                         <div class="sleeve-overlay"></div>
-                        <div class="card" id="js-sleeve-card">
+                        <div class="card"  style="background-image: url(/dist/img/sleeves/@Html.DisplayFor(modelItem => item.CardImageFileName));" id="js-sleeve-card">
                             <h3 class="js-sleeve-name">@Html.DisplayFor(modelItem => item.Name)</h3>
-                            <img id="js-sleeve-badge" src="@Html.DisplayFor(modelItem => item.BadgeImageFileName)" alt="Small">
+                            <img id="js-sleeve-badge" src="~/dist/img/sleeves/@Html.DisplayFor(modelItem => item.BadgeImageFileName)" alt="Small">
                         </div>
                     </div>
                 </div>
                 <section class="section-dl section sleeve-info modal-dl">
-                    <h2 class="js-sleeve-name"></h2>
+                    <h2 class="js-sleeve-name">@item.Name</h2>
                     <dl>
                         <dt class="dl-price">
                             Price:
@@ -35,7 +32,9 @@
                         <dt>
                             ProductID:
                         </dt>
-                        <dd id="js-sleeve-id"></dd>
+                        <dd id="js-sleeve-id">
+                            @item.SleeveId
+                        </dd>
                         <dt>
                             Description:
                         </dt>
