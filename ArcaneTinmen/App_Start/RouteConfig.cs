@@ -23,7 +23,7 @@ namespace ArcaneTinmen
               name: null,
               url: "{controller}/Page{page}",
               defaults: new { controller = "Sleeve", action = "Index" }
-          );
+            );
 
             routes.MapRoute(
              name: null,

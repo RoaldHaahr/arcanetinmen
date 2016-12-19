@@ -157,8 +157,16 @@ h3 {
   font-weight: 900;
   text-align: center; }
 
+.multiselect thead th {
+  padding: 0 6px;
+  text-align: left;
+  font-weight: 700; }
+
+.multiselect tbody td {
+  padding: 0 6px; }
+
 .link-bar {
-  padding: 1em 0; }
+  padding: 1em 1em; }
 
 .article-text article {
   margin: 0 auto;
@@ -342,12 +350,13 @@ nav ul li a {
       margin-left: auto;
       z-index: 1;
       float: none; }
-      .modal.modal-sleeve .sleeve:hover {
-        top: 0; }
       .modal.modal-sleeve .sleeve .card {
+        top: 0;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-transition: top 2s;
+        transition: top .3s, z-index .3s;
         max-width: 100%;
-        max-height: 100%;
-        top: -70px; }
+        max-height: 100%; }
   .modal .modal-dl {
     margin-left: 2em;
     width: calc(75% - 2em);
@@ -421,7 +430,6 @@ nav ul li a {
       margin: 36px 0; }
 
 .form-login {
-  margin-top: 60px;
   text-align: center; }
   .form-login h2 {
     margin-bottom: 60px; }
@@ -451,7 +459,7 @@ div.form {
     padding: 1em;
     border-radius: 10px;
     border: 1px solid #0772BA; }
-    div.form form > div label {
+    div.form form > div > label {
       padding: .5em 0;
       display: inline-block;
       width: 20%; }
@@ -529,14 +537,12 @@ div.form {
   margin-right: -50px;
   padding: 4px;
   text-align: center;
-  -webkit-transition: top 2s;
+  -webkit-transition: top .3s;
   transition: top .3s, z-index .3s;
   z-index: 30000;
   text-decoration: none; }
   .sleeve:visited {
     text-decoration: none; }
-  .sleeve:hover {
-    top: -70px !important; }
   .sleeve:last-child {
     margin-right: 0; }
   .sleeve .sleeve-overlay {
@@ -548,7 +554,12 @@ div.form {
     border-top: 1px solid white;
     border-left: 1px solid white;
     background: rgba(255, 255, 255, 0.2);
-    z-index: 2; }
+    z-index: 2;
+    transition: background-color 0.5s, border-color 0.5s;
+    -moz-transition: background-color 0.5s, border-color 0.5s;
+    -webkit-transition: background-color 0.5s, border-color 0.5s;
+    -ms-transition: background-color 0.5s, border-color 0.5s;
+    -o-transition: background-color 0.5s, border-color 0.5s; }
   .sleeve > .card {
     position: relative;
     display: block;
@@ -604,6 +615,9 @@ div.form {
 
 .section {
   position: relative; }
+  .section > h1 {
+    margin: 30px 0;
+    text-align: center; }
   .section > h2 {
     margin-top: 60px;
     margin-bottom: 12px;
@@ -653,12 +667,12 @@ div.form {
       .section.section-dl .dl > div dl {
         zoom: 1; }
         .section.section-dl .dl > div dl dt {
-          display: inline-block;
           margin: .25em -.125em;
           padding-right: 1em;
           width: 30%;
           font-weight: 900;
-          text-align: right; }
+          text-align: right;
+          float: left; }
         .section.section-dl .dl > div dl dd {
           margin: .25em -.125em;
           width: 70%;
@@ -668,12 +682,29 @@ div.form {
             white-space: pre; }
   .section.section-dl .link-bar {
     padding-bottom: 0; }
-  .section.section-sleeve-list .sleeve:hover {
-    top: 0 !important; }
-  .section.section-sleeve-list .sleeve .card {
-    height: 296px;
-    top: 0; }
+  .section.section-sleeve-list .sleeve {
+    margin-top: 0; }
+    .section.section-sleeve-list .sleeve:hover {
+      top: 0 !important; }
+    .section.section-sleeve-list .sleeve .card {
+      top: 0; }
+  .section.section-form form > div > div {
+    margin: 6px 0; }
+    .section.section-form form > div > div label {
+      display: inline-block;
+      margin-bottom: 4px; }
 
 .search-form {
   margin-top: 90px;
   margin-bottom: 36px; }
+
+.is-dark-overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border-color: transparent !important; }
+  .is-dark-overlay:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-top: 1px solid white !important;
+    border-left: 1px solid white !important; }
+
+.is-focus, .sleeves-section > div.sleeves-container .sleeves .sleeve:hover {
+  top: -70px !important; }

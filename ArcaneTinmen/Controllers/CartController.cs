@@ -97,11 +97,6 @@ namespace ArcaneTinmen.Controllers
                 }
                 db.Orders.Add(order);
                 db.SaveChanges();
-                // order processing logic
-                /*     db.ShippingDetails.Add(new ShippingDetails
-                     {
-                         Firstname = shippingDetails.Firstname;
-                     }); */
 
                 cart.Clear();
                 return View("Completed");

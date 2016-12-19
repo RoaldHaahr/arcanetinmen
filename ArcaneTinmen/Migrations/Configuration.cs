@@ -1,5 +1,6 @@
 namespace ArcaneTinmen.Migrations
 {
+    using Areas.Admin.Controllers;
     using Models;
     using System;
     using System.Collections.Generic;
@@ -157,93 +158,116 @@ namespace ArcaneTinmen.Migrations
                 new Game
                 {
                     GameId = 1,
-                    SleeveId = "AT-10407",
                     Name = "Hero Quest"
                 },
                 new Game
                 {
                     GameId = 2,
-                    SleeveId = "AT-10409",
                     Name = "Scythe"
                 },
                 new Game
                 {
                     GameId = 3,
-                    SleeveId = "AT-10408",
                     Name = "Dominion"
                 },
                 new Game
                 {
                     GameId = 4,
-                    SleeveId = "AT-10409",
                     Name = "Falling Sky"
                 },
                 new Game
                 {
                     GameId = 5,
-                    SleeveId = "AT-10407",
                     Name = "Grand Austria Hotel",
                 },
                 new Game
                 {
                     GameId = 6,
-                    SleeveId = "AT-10405",
                     Name = "Dungeon and Dragons",
                 },
                 new Game
                 {
-                    GameId = 3,
-                    SleeveId = "AT-10404",
-                    Name = "Thunder and Lightning",
-                },
-                new Game
-                {
                     GameId = 7,
-                    SleeveId = "AT-10407",
                     Name = "Star Wars Rebellion",
                 },
                 new Game
                 {
                     GameId = 8,
-                    SleeveId = "AT-10408",
-                    Name = "Settlers of Catan",
+                    Name = "Settlers of Catan"
                 },
                 new Game
                 {
                     GameId = 9,
-                    SleeveId = "AT-10402",
                     Name = "Trivial Pursuit",
                 },
                 new Game
                 {
                     GameId = 10,
-                    SleeveId = "AT-10402",
                     Name = "Monopoly",
                 },
                 new Game
                 {
                     GameId = 11,
-                    SleeveId = "AT-10408",
                     Name = "Risk",
                 },
                 new Game
                 {
                     GameId = 12,
-                    SleeveId = "AT-10409",
                     Name = "Uno",
                 },
                 new Game
                 {
                     GameId = 13,
-                    SleeveId = "AT-10406",
                     Name = "Best Game",
                 },
+                new Game
+                {
+                    GameId = 14,
+                    Name = "Thunder and Lightning",
+                }
             };
 
             games.ForEach(a => context.Games.AddOrUpdate(a));
             context.SaveChanges();
 
-            List <Account> accounts = new List<Account>
+            List<GameSleeve> gameSleeves = new List<GameSleeve>
+            {
+                new GameSleeve
+                {
+                    SleeveId = "AT-10405",
+                    GameId = 8
+                },
+                new GameSleeve
+                {
+                    SleeveId = "AT-10407",
+                    GameId = 9
+                },
+                new GameSleeve
+                {
+                    SleeveId = "AT-10406",
+                    GameId = 9
+                },
+                new GameSleeve
+                {
+                    SleeveId = "AT-10407",
+                    GameId = 10
+                },
+                new GameSleeve
+                {
+                    SleeveId = "AT-10406",
+                    GameId = 10
+                },
+                new GameSleeve
+                {
+                    SleeveId = "AT-10408",
+                    GameId = 13
+                }
+            };
+
+            gameSleeves.ForEach(gs => context.GameSleeves.AddOrUpdate(gs));
+            context.SaveChanges();
+
+            List<Account> accounts = new List<Account>
             {
                 new Account
                 {

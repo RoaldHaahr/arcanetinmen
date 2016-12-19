@@ -30,8 +30,8 @@
                             <td>
                                 @using (Html.BeginForm("RemoveFromCart", "Cart"))
                                 {
-                                    @Html.Hidden("ProductId", line.Sleeve.SleeveId)
-                                    @Html.HiddenFor(x => x.ReturnUrl)
+                                    @Html.Hidden("sleeveId", line.Sleeve.SleeveId)
+                                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
                                     <input class="crazybuttonRed"
                                            type="submit" value="Remove" />
                                 }

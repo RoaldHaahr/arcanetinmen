@@ -7,7 +7,7 @@ div.form {
 			padding: 1em;
 			border-radius: 10px;
 			border: 1px solid $blue;
-			label {
+			> label {
 				padding: .5em 0;
 				display: inline-block;
 				width: 20%;

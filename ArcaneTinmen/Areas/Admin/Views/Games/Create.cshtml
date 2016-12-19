@@ -1,0 +1,36 @@
+﻿@model ArcaneTinmen.Models.Game
+@using System.Web.Optimization
+
+@{
+    ViewBag.Title = "Create";
+}
+<section class="section section-form">
+    <h1>Add a new game</h1>
+
+    <div class="form form-create">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div>
+                <div>
+                    @Html.LabelFor(model => model.Name)
+                    <div>
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name, "")
+                    </div>
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.GameSleeves)
+                    <div>
+                        @Html.Action("GetSleeveSelect")
+                    </div>
+                </div>
+            </div>
+            <p class="link-bar">
+                <input type="submit" value="Add" class="btn" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        }
+    </div>
+</section>

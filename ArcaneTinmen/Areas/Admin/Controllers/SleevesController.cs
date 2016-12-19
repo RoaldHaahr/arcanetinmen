@@ -18,14 +18,14 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Sleeves
         public ActionResult Index()
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             return View(db.Sleeves.ToList());
         }
 
         // GET: Admin/Sleeves/Details/5
         public ActionResult Details(string id)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -41,14 +41,14 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Sleeves/List
         public ActionResult List()
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             return View(db.Sleeves.ToList());
         }
 
         // GET: Admin/Sleeves/Create
         public ActionResult Create()
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "SleeveId,Name,Description,Height,Width,SalePrice,StockAmount,CardImageFileName,BadgeImageFileName")] Sleeve sleeve)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             if (ModelState.IsValid)
             {
                 db.Sleeves.Add(sleeve);
@@ -73,7 +73,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Sleeves/Edit/5
         public ActionResult Edit(string id)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -93,7 +93,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "SleeveId,Name,Description,Height,Width,SalePrice,StockAmount,CardImageFileName,BadgeImageFileName")] Sleeve sleeve)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             if (ModelState.IsValid)
             {
                 db.Entry(sleeve).State = EntityState.Modified;
@@ -106,7 +106,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Sleeves/Delete/5
         public ActionResult Delete(string id)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -124,7 +124,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             Sleeve sleeve = db.Sleeves.Find(id);
             db.Sleeves.Remove(sleeve);
             db.SaveChanges();

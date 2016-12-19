@@ -6,6 +6,7 @@
 
     double SleeveCount = Model.Sleeves.Count();
     double SleeveAngle = (SleeveCount * 5 / 2 - SleeveCount * 5) - 2.5;
+    double DimensionMultiplier = 3;
 }
 
 
@@ -63,7 +64,7 @@
                             Fits games like:
                         </dt>
                         <dd id="js-sleeve-games">
-                            Munchkin, Monopoly, Risk, Axis of Evil, Dominion
+                            
                         </dd>
                     </dl>
                     <form action="/Cart/AddToCart" method="post" class="order-controls">
@@ -84,8 +85,28 @@
         <div class="sleeves">
             @foreach (Sleeve sleeve in Model.Sleeves.ToList())
             {
+                List<string> gameList = new List<string>();
+                foreach (GameSleeve gs in Model.GameSleeves)
+                {
+                    if(gs.SleeveId == sleeve.SleeveId)
+                    {
+                        string gameName = Model.Games.Where(g => g.GameId == gs.GameId).Select(g => g.Name).FirstOrDefault();
+                        gameList.Add(gameName);
+                    }
+                }
                 SleeveAngle += 5;
-                @Html.Partial("_SleeveSummary", new KeyValuePair<Sleeve, Double>(sleeve, SleeveAngle))
+                string games = string.Join(", ", gameList);
+
+
+                <a href="#" class="sleeve" data-id="@sleeve.SleeveId" data-price="@sleeve.SalePrice" data-name="@sleeve.Name" data-description="@sleeve.Description" data-width="@sleeve.Width" data-height="@sleeve.Height" data-stock="@sleeve.StockAmount" data-card="@sleeve.CardImageFileName" data-badge="@sleeve.BadgeImageFileName" data-games="@games" style="transform: rotate(@(SleeveAngle)deg)">
+                    <div class="sleeve-overlay"></div>
+                    <div class="card" style="background-image: url('/dist/img/sleeves/@sleeve.CardImageFileName'); width: calc(@DimensionMultiplier * @(sleeve.Width)px); height: calc(@DimensionMultiplier * @(sleeve.Height)px);">
+                        <h3>
+                            @sleeve.Name
+                        </h3>
+                        <img src="~/dist/img/sleeves/@sleeve.BadgeImageFileName" alt="Small">
+                    </div>
+                </a>
             }
         </div>
     </div>
@@ -105,35 +126,21 @@
                     event.preventDefault();
                     $("#searchForGame").val(ui.item.label);
                     var id = ui.item.value;
-                    $('.sleeve').each(function () {
-                        $(this).css({
-                            'top': 0
-                        });
-                        $(this).find('.sleeve-overlay').css({
-                            'background-color': 'rgba(0,0,0,.5)',
-                            'border-color': '#000'
-                        });
-                        if ($(this).attr('data-id') == id) {
-                            $(this).css({
-                                'top': -70
-                            });
-                            $(this).find('.sleeve-overlay').css({
-                                'background-color': 'rgba(255,255,255,.2)',
-                                'border-color': '#FFF'
-                            });
+                    $('.sleeves-section .sleeve').each(function () {
+                        var sleeveID = $(this).attr('data-id');
+                        $(this).removeClass('is-focus');
+                        $(this).find('.sleeve-overlay').addClass('is-dark-overlay');
+                        if (id.indexOf(sleeveID) > -1) {
+                            $(this).addClass('is-focus');
+                            $(this).find('.sleeve-overlay').removeClass('is-dark-overlay');
                         }
                     });
                 }
             }).focus(function() {
-                $('.sleeves-section').find('.sleeve-overlay').css({
-                    'background-color': 'rgba(0,0,0,.5)',
-                    'border-color': '#000'
-                });
+                $('.sleeves-section').find('.sleeve-overlay').addClass('is-dark-overlay');
             }).blur(function () {
-                $('.sleeves-section').find('.sleeve').css('top', 0).find('.sleeve-overlay').css({
-                    'background-color': 'rgba(255,255,255,.2)',
-                    'border-color': '#FFF'
-                });
+                $('.sleeves-section').find('.sleeve').removeClass('is-focus');
+                $('.sleeves-section').find('.sleeve-overlay').removeClass('is-dark-overlay');
             }).data("ui-autocomplete")._renderItem = function(ul, item) {
                 return $("<li>").append("<a class=\"js-game\" data-id=\"" + item.value + "\">" + item.label + "</a>").appendTo(ul);
             }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web.Mvc;
 using ArcaneTinmen.Models;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Collections;
 
 namespace ArcaneTinmen.Controllers
 {
@@ -17,7 +19,9 @@ namespace ArcaneTinmen.Controllers
             db = new ArcaneTinmenContext();
             SleeveListViewModel model = new SleeveListViewModel
             {
-                Sleeves = db.Sleeves.ToList()
+                Sleeves = db.Sleeves.ToList(),
+                Games = db.Games.ToList(),
+                GameSleeves = db.GameSleeves.ToList()
             };
             return View(model);
         }
@@ -42,34 +46,10 @@ namespace ArcaneTinmen.Controllers
         public JsonResult GetGames(string term)
         {
             ArcaneTinmenContext db = new ArcaneTinmenContext();
+           
+            var games = db.Games.Where(g => g.Name.StartsWith(term)).Select(g => new { label = g.Name, value = g.GameSleeves.Select(gs => gs.SleeveId) }).ToArray();
 
-            List<string> games;
-            List<string> sleeves;
-
-
-            games = db.Games.Where(x => x.Name.StartsWith(term))
-                .Select(y => y.Name )
-                .ToList();
-
-            /* 
-             *  Replace for multi value + id
-             *  */
-               
-               sleeves = db.Games.Where(x => x.Name.StartsWith(term))
-                  .Select(s => s.SleeveId)
-                  .ToList();
-
-            var sendmeplz = db.Games.Where(x => x.Name.StartsWith(term)).
-                Select(y => new { label = y.Name, value = y.SleeveId}).ToArray();
-
-             
-
-               return Json(sendmeplz, JsonRequestBehavior.AllowGet);   
-
-              
-            /*
-            return Json(games, JsonRequestBehavior.AllowGet); */
-
+            return Json(games, JsonRequestBehavior.AllowGet);   
         }
     }
 }

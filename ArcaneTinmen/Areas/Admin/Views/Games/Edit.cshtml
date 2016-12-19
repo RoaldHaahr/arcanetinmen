@@ -1,0 +1,41 @@
+﻿@model ArcaneTinmen.Models.Game
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<section class="section section-form">
+    <h1>Edit game</h1>
+    <div class="form form-edit">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div>
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.GameId)
+
+                <div>
+                    @Html.LabelFor(model => model.Name)
+                    <div>
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+
+                <div>
+                    @Html.LabelFor(model => model.GameSleeves)
+                    <div>
+                        @Html.Action("GetSleeveSelect", new { gs = Model.GameSleeves })
+                    </div>
+                </div>
+            </div>
+            <p class="link-bar">
+                <input type="submit" value="Save" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        }
+    </div>
+</section>
+
+

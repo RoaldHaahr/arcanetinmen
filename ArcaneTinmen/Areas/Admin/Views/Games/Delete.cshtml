@@ -1,0 +1,45 @@
+﻿@model ArcaneTinmen.Models.Game
+@using ArcaneTinmen.Models
+
+@{
+    ViewBag.Title = "Delete";
+}
+<section class="section section-dl">
+    <h1>Delete</h1>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div class="dl dl-delete">
+        <div>
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameSleeves)
+                </dt>
+
+                <dd>
+                    @foreach (GameSleeve gs in Model.GameSleeves)
+            {
+                        <p>- @gs.Sleeve.Name | @gs.Sleeve.SleeveId (@gs.Sleeve.Width x @gs.Sleeve.Height mm) </p>
+                    }
+                </dd>
+            </dl>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <p class="link-bar">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        }
+    </div>
+</section>

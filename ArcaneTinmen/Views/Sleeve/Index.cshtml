@@ -14,9 +14,9 @@
         <div class="modal-inner">
             <article class="article-sleeve article">
                 <div class="sleeve-img">
-                    <div class="sleeve js-sleeve">
+                    <div class="sleeve js-sleeve" style="width: calc(3.779527559 * @Html.DisplayFor(modelItem => item.Width)px); height: calc(3.779527559 * @Html.DisplayFor(modelItem => item.Height)px);">
                         <div class="sleeve-overlay"></div>
-                        <div class="card"  style="background-image: url(/dist/img/sleeves/@Html.DisplayFor(modelItem => item.CardImageFileName));" id="js-sleeve-card">
+                        <div class="card" style="background-image: url(/dist/img/sleeves/@Html.DisplayFor(modelItem => item.CardImageFileName)); width: 100%; height:100%;" id="js-sleeve-card">
                             <h3 class="js-sleeve-name">@Html.DisplayFor(modelItem => item.Name)</h3>
                             <img id="js-sleeve-badge" src="~/dist/img/sleeves/@Html.DisplayFor(modelItem => item.BadgeImageFileName)" alt="Small">
                         </div>

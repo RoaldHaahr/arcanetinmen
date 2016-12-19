@@ -1,5 +1,9 @@
 .section {
 	position:relative;
+	> h1 {
+		margin: 30px 0;
+		text-align: center;
+	}
 	> h2 {
 		margin-top: 60px;
 		margin-bottom: 12px;
@@ -71,15 +75,14 @@
 				border: 1px solid $blue;
 				border-radius: 10px;
 				dl {
-					// overflow: auto;
 					zoom: 1;
 					dt {
-						display: inline-block;
 						margin: .25em -.125em;
 						padding-right: 1em;
 						width: 30%;
 						font-weight: 900;
 						text-align: right;
+						float: left;
 					}
 					dd {
 						margin: .25em -.125em;
@@ -99,12 +102,25 @@
 	}
 	&.section-sleeve-list {
 		.sleeve {
+			margin-top: 0;
 			&:hover {
 				top: 0 !important;
 			}
 			.card {
-				height: 296px;
 				top: 0;
+			}
+		}
+	}
+	&.section-form {
+		form {
+			> div {
+				> div {
+					margin: 6px 0;
+					label {
+						display:  inline-block;
+						margin-bottom: 4px;
+					}
+				}
 			}
 		}
 	}

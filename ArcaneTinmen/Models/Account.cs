@@ -4,6 +4,7 @@ namespace ArcaneTinmen.Models
 {
     public class Account
     {
+        // PROPERTIES
         [Key]
         public int AccountId { get; set; }
         [Required(ErrorMessage = "Please enter a valid username")]
@@ -14,6 +15,7 @@ namespace ArcaneTinmen.Models
         [RegularExpression(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,3}$", ErrorMessage = "Not a valid email")]
         public string Email { get; set; }
 
+        // CONSTRUCTORS
         public Account() {}
 
         public Account(int accountId, string username, string password, string email)

@@ -9,3 +9,11 @@
 	0 (-$size) $color,
 	(-$size) 0 $color
 }
+
+@mixin prefix($property, $value...) {
+	#{$property}: $value;
+	#{'-moz-' + $property}: $value;
+	#{'-webkit-' + $property}: $value;
+	#{'-ms-' + $property}: $value;
+	#{'-o-' + $property}: $value;
+}

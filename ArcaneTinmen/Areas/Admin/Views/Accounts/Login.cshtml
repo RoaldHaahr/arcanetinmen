@@ -1,0 +1,33 @@
+﻿@model ArcaneTinmen.Models.Account
+
+<section class="section form-login">
+    <h1>Login</h1>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="input-field">
+            @Html.LabelFor(model => model.Username)
+            <div>
+                @Html.EditorFor(model => model.Username)
+                @Html.ValidationMessageFor(model => model.Username)
+            </div>
+        </div>
+
+        <div class="input-field">
+            @Html.LabelFor(model => model.Password)
+            <div>
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password, "")
+            </div>
+        </div>
+
+        <div class="form-submit">
+            <input type="submit" value="Login" class="btn btn-default" />
+        </div>
+    }
+</section>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

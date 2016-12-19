@@ -1,0 +1,66 @@
+﻿@model ArcaneTinmen.ViewModels.SleeveListViewModel
+@using ArcaneTinmen.Models
+
+@{
+    ViewBag.Title = "_SleeveSelect";
+}
+
+<table class="multiselect">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Dimensions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Sleeve s in Model.Sleeves)
+            {
+            <tr>
+
+                @{
+                    string dimensions = @s.Width + " x " + @s.Height;
+                }
+
+                @if (Model.GameSleeves != null)
+                {
+                    <td>
+                        <input type="checkbox" value="@s.SleeveId" name="Sleeves" @(Model.GameSleeves.Where(gs => gs.SleeveId == s.SleeveId).Any() ? "checked " : "") />
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <input type="checkbox" value="@s.SleeveId" name="Sleeves" />
+                    </td>
+                }
+
+                <td>@s.Name</td>
+                <td>@s.SleeveId</td>
+                <td>@dimensions</td>
+
+
+            </tr>
+                    }
+    </tbody>
+</table>
+
+@*<ul id="sleeve-select" class="select select-multiple" multiple>
+        @foreach (Sleeve s in Model.Sleeves)
+        {
+            string dimensions = @s.Width + " x " + @s.Height;
+            <li>
+                @if (Model.GameSleeves != null)
+                {
+                    <input type="checkbox" value="@s.SleeveId" name="Sleeves" @(Model.GameSleeves.Where(gs => gs.SleeveId == s.SleeveId).Any() ? "checked " : "") />
+                }
+                else
+                {
+                    <input type="checkbox" value="@s.SleeveId" name="Sleeves" />
+                }
+
+                <label for="GameSleeves">@s.Name | @s.SleeveId (@dimensions)</label>
+            </li>
+        }
+    </ul>*@

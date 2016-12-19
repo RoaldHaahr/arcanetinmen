@@ -1,7 +1,7 @@
 ﻿@model ArcaneTinmen.ViewModels.Cart
 
 <div class="navbar-right" style="padding-right:20px">
-    <i class="fa fa-shopping-cart fa-2x fa-inverse" aria-hidden="true"></i>@Html.ActionLink("Cart " + "(" + @Model.Lines.Sum(x => x.Quantity) + ")", "Index", "Cart",
+    <i class="fa fa-shopping-cart fa-2x fa-inverse" aria-hidden="true"></i>@Html.ActionLink("Cart " + "(" + @Model.Lines.Sum(x => x.Quantity) + ")", "Index", "Cart", null,
 new { returnUrl = Request.Url.PathAndQuery }) 
 <!-- new { class = "btn btn-default navbar-btn" }) -->
 </div>

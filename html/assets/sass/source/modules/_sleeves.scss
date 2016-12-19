@@ -7,6 +7,11 @@
 		display: inline-block;
 		.sleeves {
 			display: inline-block;
+			.sleeve {
+				&:hover {
+					@extend .is-focus;
+				}
+			}
 		}
 	}
 	h2 {
@@ -24,16 +29,12 @@
 	margin-right: -50px;
 	padding: 4px;
 	text-align: center;
-	
-	-webkit-transition: top 2s;
+	-webkit-transition: top .3s;
 	transition: top .3s, z-index .3s;
 	z-index: 30000;
 	text-decoration: none;
 	&:visited {
 		text-decoration: none;
-	}
-	&:hover {
-		top: -70px !important;
 	}
 	&:last-child {
 		margin-right: 0;
@@ -48,6 +49,7 @@
 		border-left: 1px solid white;
 		background: rgba(255, 255, 255, 0.2);
 		z-index: 2;
+		@include prefix(transition, background-color .5s, border-color .5s);
 	}
 	> .card {
 		position: relative;

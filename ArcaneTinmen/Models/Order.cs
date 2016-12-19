@@ -11,7 +11,7 @@ namespace ArcaneTinmen.Models
         private decimal totalPrice;
         private List<OrderLine> orderLines = new List<OrderLine>();
 
-        // Maybe Order or Invoice instead
+        // PROPERTIES
         [Key]
         public int OrderId { get; set; }
         [Column(TypeName = "datetime2")]
@@ -32,13 +32,14 @@ namespace ArcaneTinmen.Models
         }
         public int CustomerId { get; set; }
 
-        public Customer Customer { get; set; }
-
-        public List<OrderLine> OrderLines {
+        // NAVIGATION
+        public virtual Customer Customer { get; set; }
+        public virtual List<OrderLine> OrderLines {
             get { return orderLines; }
             set { orderLines = value; }
         }
 
+        // CONSTRUCTORS
         public Order(){}
 
         public Order(DateTime datePlaced, Customer customer)

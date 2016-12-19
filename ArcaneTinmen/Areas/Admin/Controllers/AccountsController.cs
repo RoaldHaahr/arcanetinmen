@@ -18,14 +18,14 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Accounts
         public ActionResult Index()
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login");
             return View(db.Accounts.ToList());
         }
 
         // GET: Admin/Accounts/Details/5
         public ActionResult Details(int? id)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -41,7 +41,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Accounts/Create
         public ActionResult Create()
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login");
             return View();
         }
 
@@ -52,7 +52,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "AccountId,Username,Password,Email")] Account account)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login");
             if (ModelState.IsValid)
             {
                 db.Accounts.Add(account);
@@ -66,7 +66,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Accounts/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -86,7 +86,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "AccountId,Username,Password,Email")] Account account)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login");
             if (ModelState.IsValid)
             {
                 db.Entry(account).State = EntityState.Modified;
@@ -99,7 +99,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Accounts/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -117,11 +117,45 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            if (Session["AdminId"] == null) return RedirectToAction("Login", "Management");
+            if (Session["AdminId"] == null) return RedirectToAction("Login");
+
             Account account = db.Accounts.Find(id);
             db.Accounts.Remove(account);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Login()
+        {
+            if (Session["AdminId"] != null) return RedirectToAction("Index");
+
+            return View();
+        }
+
+        public ActionResult Logout()
+        {
+            Session["AdminId"] = null;
+            return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public ActionResult Login(Account admin)
+        {
+            if (Session["AdminId"] != null) return RedirectToAction("Index");
+
+            var admn = db.Accounts.Single(a => a.Username == admin.Username && a.Password == admin.Password);
+            if (admn != null)
+            {
+                Session["AdminId"] = admin.AccountId.ToString();
+                Session["AdminUserName"] = admn.Username.ToString();
+                return RedirectToAction("Index", "Sleeves");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Username or Password is wrong.");
+            }
+
+            return View();
         }
 
         protected override void Dispose(bool disposing)

@@ -8,6 +8,7 @@ namespace ArcaneTinmen.Models
 {
     public class Customer
     {
+        // PROPTERTIES
         //[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CustomerId { get; set; }
         //[Required(ErrorMessage = "Enter a name Between 2 and 50 characters")]
@@ -21,8 +22,10 @@ namespace ArcaneTinmen.Models
         //[Required(ErrorMessage = "please enter a valid Email")]
         public string Email { get; set; }
 
+        // NAVIGATION
         public virtual ICollection<Order> Orders { get; set; }
 
+        // CONSTRUCTORS
         public Customer() { }
 
         public Customer(int customerId, string firstnavn, string lastnavn, string address, int zip, string city)

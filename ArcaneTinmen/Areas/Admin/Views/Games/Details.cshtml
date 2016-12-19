@@ -1,0 +1,40 @@
+﻿@model ArcaneTinmen.Models.Game
+@using ArcaneTinmen.Models
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="section section-dl">
+    <h1>Details</h1>
+
+    <div class="dl dl-details">
+        <div>
+            <dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameSleeves)
+                </dt>
+
+                <dd>
+                    @foreach (GameSleeve gs in Model.GameSleeves)
+                    {
+                        <p>- @gs.Sleeve.Name | @gs.Sleeve.SleeveId (@gs.Sleeve.Width x @gs.Sleeve.Height mm) </p>
+                    }
+                </dd>
+
+            </dl>
+        </div>
+        <p class="link-bar">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</section>

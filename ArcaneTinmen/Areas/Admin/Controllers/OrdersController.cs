@@ -18,6 +18,8 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // GET: Admin/Orders
         public ActionResult Index()
         {
+            if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
+
             var orders = db.Orders.Include(o => o.Customer).Include(o => o.OrderLines);
             return View(orders.ToList());
         }

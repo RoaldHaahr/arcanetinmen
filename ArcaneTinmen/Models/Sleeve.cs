@@ -6,6 +6,7 @@ namespace ArcaneTinmen.Models
 {
     public class Sleeve
     {
+        // PROPERTIES
         //[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string SleeveId { get; set; }
@@ -24,9 +25,11 @@ namespace ArcaneTinmen.Models
 
         public string BadgeImageFileName { get; set; }
 
+        // NAVIGATION
         //public List<OrderLine> OrderLines { get; set; }
-        //public virtual ICollection<GameSleeve> GameSleeves { get; set; }
+        public virtual ICollection<Sleeve> GameSleeves { get; set; }
 
+        // CONSTRUCTORS
         public Sleeve() {}
 
         public Sleeve(string name, decimal saleprice)

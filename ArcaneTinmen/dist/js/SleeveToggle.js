@@ -1,34 +1,83 @@
 $(document).ready(function() {
-	$('.sleeve').on('click', function() {
+	$('.sleeves-section .sleeve').on('click', function() {
+		var width = $(this).attr('data-width'),
+		height = $(this).attr('data-height'),
+		displayWidth = 2.8 * width,
+		displayHeight = 2.8 * height,
+		id = $(this).attr('data-id'),
+		card = '/dist/img/sleeves/' + $(this).attr('data-card'),
+		badge = '/dist/img/sleeves/' + $(this).attr('data-badge'),
+		name = $(this).attr('data-name'),
+		description = $(this).attr('data-description'),
+		price = $(this).attr('data-price'),
+		dimensions = width + ' x ' + height,
+		games = $(this).attr('data-games'),
+		stock = $(this).attr('data-stock');
+		
 		if ($('.modal-sleeve').is(':hidden') && $('.form-search form').is(':visible')) {
-			$('.form-search > form').hide();
-			$('.modal-sleeve').show();
-		}
-		var width = 2.8 * $(this).attr('data-width');
-		var height = 2.8 * $(this).attr('data-height');
-		var id = $(this).attr('data-id');
-		$('.js-sleeve-name').html($(this).attr('data-name'));
-		$('#js-sleeve-price').html($(this).attr('data-price'));
-		$('#js-sleeve-id').html(id);
-		$('#js-sleeve-description').html($(this).attr('data-description'));
-		$('#js-sleeve-dimensions').html($(this).attr('data-width') + ' x ' + $(this).attr('data-height') + ' mm');
-		$('#js-sleeve-stock').html($(this).attr('data-stock'));
-		$('#js-sleeve-games').html($(this).attr('data-games'));
-		$('#js-sleeve-id-hidden').attr({
-			"value":id
-		});
-		$('#js-sleeve-card').css({
-			'background-image': 'url(/dist/img/sleeves/' + $(this).attr('data-card') + ')',
-			'width': width,
-			'height': height
-		});
-		$('.js-sleeve').height(height);
-		$('.js-sleeve').width(width);
+			$('.form-search > form').fadeOut();
+			updateModal();
+			$('.modal-sleeve').delay(100).fadeIn();
+			
+		} else {
+			$('#js-sleeve-card').removeClass('is-focus');
+			setTimeout(updateModal, 300);
 
-		$('#js-sleeve-badge').attr('src', '/dist/img/sleeves/' + $(this).attr('data-badge'));
+			// $('#js-sleeve-card').css({
+			// 	'background-image': 'url(/dist/img/sleeves/' + $(this).attr('data-card') + ')',
+			// 	'width': width,
+			// 	'height': height
+			// });
+
+			// $('#js-sleeve-card').delay(200).queue(function(next) {
+			// 	$(this).addClass('is-focus');
+			// 	$('#js-sleeve-card').css({
+			// 	'background-image': 'url(/dist/img/sleeves/' + $(this).attr('data-card') + ')',
+			// 	'width': width,
+			// 	'height': height
+			// });
+			// 	next();
+			// });
+			
+		}
+		
+		
+		// $('#js-sleeve-card').delay(200).queue(function(next) {
+		// 	$(this).addClass('is-focus');
+		// 	next();
+		// });
+		function updateModal() {
+			$('.js-sleeve').height(displayHeight);
+			$('.js-sleeve').width(displayWidth);
+			$('#js-sleeve-card').css({
+				'background-image': 'url(' + card + ')',
+				'width': displayWidth,
+				'height': displayHeight
+			});
+			setTimeout(function() {
+				$('#js-sleeve-card').addClass('is-focus');
+			}, 300);
+			// $().delay(500).queue(function(next) {
+				
+			// });
+			$('.js-sleeve-name').html(name);
+			$('#js-sleeve-price').html(price);
+			$('#js-sleeve-id').html(id);
+			$('#js-sleeve-description').html(description);
+			$('#js-sleeve-dimensions').html(width + ' x ' + height + ' mm');
+			$('#js-sleeve-stock').html(stock);
+			$('#js-sleeve-games').html(games);
+			$('#js-sleeve-id-hidden').attr({
+				"value":id
+			});
+			$('#js-sleeve-badge').attr('src', badge);
+		}
+
 	});
 	$('.js-modal-close').on('click', function() {
-		$(this).parent('.modal').hide();
-		$('.form-search form').show();
+		$('#js-sleeve-card').removeClass('is-focus');
+		$(this).parent('.modal').delay(300).fadeOut();
+		$('.form-search form').delay(300).fadeIn();
+
 	});
 });

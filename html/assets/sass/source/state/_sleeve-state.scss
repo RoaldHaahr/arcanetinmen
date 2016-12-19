@@ -1,0 +1,13 @@
+.is-dark-overlay {
+	background-color: rgba(0, 0, 0, .5) !important;
+	border-color: transparent !important;
+	&:hover {
+		background: rgba(255, 255, 255, 0.2) !important;
+		border-top: 1px solid white !important;
+		border-left: 1px solid white !important;
+	}
+}
+
+.is-focus {
+	top: -70px !important;
+}

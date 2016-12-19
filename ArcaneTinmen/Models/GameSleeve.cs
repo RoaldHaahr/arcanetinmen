@@ -6,6 +6,7 @@ namespace ArcaneTinmen.Models
 {
     public class GameSleeve
     {
+        // PROPERTIES
         //[Key]
         //public int GameSleeveId { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -16,9 +17,11 @@ namespace ArcaneTinmen.Models
         [Required]
         public int GameId { get; set; }
 
+        // NAVIGATION
         public virtual Sleeve Sleeve { get; set; }
         public virtual Game Game { get; set; }
 
+        // CONSTRUCTORS
         public GameSleeve() {}
 
         public GameSleeve(string sleeveId, int gameId)
