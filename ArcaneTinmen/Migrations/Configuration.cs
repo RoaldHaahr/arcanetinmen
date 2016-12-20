@@ -63,7 +63,8 @@ namespace ArcaneTinmen.Migrations
                     SalePrice = 100,
                     StockAmount = 130,
                     CardImageFileName = "l_card.svg",
-                    BadgeImageFileName = "l_badge.svg"
+                    BadgeImageFileName = "l_badge.svg",
+                    ShowFrontPage = true
                 },
                 new Sleeve
                 {
@@ -75,7 +76,8 @@ namespace ArcaneTinmen.Migrations
                     SalePrice = 100,
                     StockAmount = 140,
                     CardImageFileName = "m_card.svg",
-                    BadgeImageFileName = "m_badge.svg"
+                    BadgeImageFileName = "m_badge.svg",
+                    ShowFrontPage = true
                 },
                 new Sleeve
                 {
@@ -87,7 +89,8 @@ namespace ArcaneTinmen.Migrations
                     SalePrice = 100,
                     StockAmount = 130,
                     CardImageFileName = "s_card.svg",
-                    BadgeImageFileName = "s_badge.svg"
+                    BadgeImageFileName = "s_badge.svg",
+                    ShowFrontPage = true
                 },
                 new Sleeve
                 {
@@ -99,7 +102,8 @@ namespace ArcaneTinmen.Migrations
                     SalePrice = 100,
                     StockAmount = 130,
                     CardImageFileName = "mini_card.svg",
-                    BadgeImageFileName = "mini_badge.svg"
+                    BadgeImageFileName = "mini_badge.svg",
+                    ShowFrontPage = true
                 },
                 new Sleeve
                 {
@@ -111,7 +115,8 @@ namespace ArcaneTinmen.Migrations
                     SalePrice = 100,
                     StockAmount = 130,
                     CardImageFileName = "standard_card.svg",
-                    BadgeImageFileName = "standard_badge.svg"
+                    BadgeImageFileName = "standard_badge.svg",
+                    ShowFrontPage = true
                 },
                 new Sleeve
                 {
@@ -123,7 +128,8 @@ namespace ArcaneTinmen.Migrations
                     SalePrice = 100,
                     StockAmount = 130,
                     CardImageFileName = "xl_card.svg",
-                    BadgeImageFileName = "xl_badge.svg"
+                    BadgeImageFileName = "xl_badge.svg",
+                    ShowFrontPage = true
                 },
                 new Sleeve
                 {
@@ -135,7 +141,8 @@ namespace ArcaneTinmen.Migrations
                     SalePrice = 100,
                     StockAmount = 130,
                     CardImageFileName = "oversize_card.svg",
-                    BadgeImageFileName = "oversize_badge.svg"
+                    BadgeImageFileName = "oversize_badge.svg",
+                    ShowFrontPage = true
                 },
                 new Sleeve
                 {
@@ -147,7 +154,8 @@ namespace ArcaneTinmen.Migrations
                     SalePrice = 100,
                     StockAmount = 130,
                     CardImageFileName = "square_card.svg",
-                    BadgeImageFileName = "square_badge.svg"
+                    BadgeImageFileName = "square_badge.svg",
+                    ShowFrontPage = true
                 }
             };
             sleeves.ForEach(s => context.Sleeves.AddOrUpdate(s));

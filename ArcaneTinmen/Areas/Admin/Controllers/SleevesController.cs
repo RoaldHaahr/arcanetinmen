@@ -57,7 +57,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SleeveId,Name,Description,Height,Width,SalePrice,StockAmount,CardImageFileName,BadgeImageFileName")] Sleeve sleeve)
+        public ActionResult Create([Bind(Include = "SleeveId,Name,Description,Height,Width,SalePrice,StockAmount,CardImageFileName,BadgeImageFileName,ShowFrontPage")] Sleeve sleeve)
         {
             if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             if (ModelState.IsValid)
@@ -91,7 +91,7 @@ namespace ArcaneTinmen.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SleeveId,Name,Description,Height,Width,SalePrice,StockAmount,CardImageFileName,BadgeImageFileName")] Sleeve sleeve)
+        public ActionResult Edit([Bind(Include = "SleeveId,Name,Description,Height,Width,SalePrice,StockAmount,CardImageFileName,BadgeImageFileName,ShowFrontPage")] Sleeve sleeve)
         {
             if (Session["AdminId"] == null) return RedirectToAction("Login", "Accounts");
             if (ModelState.IsValid)

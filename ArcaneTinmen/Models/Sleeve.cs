@@ -21,6 +21,8 @@ namespace ArcaneTinmen.Models
         //[Required(ErrorMessage = "Please enter the amount of sleeves in stock")]
         public int StockAmount { get; set; }
 
+        public bool ShowFrontPage { get; set; }
+
         public string CardImageFileName { get; set; }
 
         public string BadgeImageFileName { get; set; }

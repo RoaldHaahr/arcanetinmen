@@ -94,6 +94,13 @@
                         @Html.ValidationMessageFor(model => model.BadgeImageFileName)
                     </div>
                 </div>
+                <div>
+                    @Html.LabelFor(model => model.ShowFrontPage)
+                    <div>
+                        @Html.EditorFor(model => model.ShowFrontPage, new { htmlAttribute = new { placeholder = "Show On Front Page" } })
+                        @Html.ValidationMessageFor(model => model.ShowFrontPage, "")
+                    </div>
+                </div>
             </div>
 
             <p class="link-bar">

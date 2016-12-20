@@ -85,6 +85,7 @@
         <div class="sleeves">
             @foreach (Sleeve sleeve in Model.Sleeves.ToList())
             {
+
                 List<string> gameList = new List<string>();
                 foreach (GameSleeve gs in Model.GameSleeves)
                 {
@@ -96,7 +97,8 @@
                 }
                 SleeveAngle += 5;
                 string games = string.Join(", ", gameList);
-
+                if(@sleeve.ShowFrontPage)
+                { 
 
                 <a href="#" class="sleeve" data-id="@sleeve.SleeveId" data-price="@sleeve.SalePrice" data-name="@sleeve.Name" data-description="@sleeve.Description" data-width="@sleeve.Width" data-height="@sleeve.Height" data-stock="@sleeve.StockAmount" data-card="@sleeve.CardImageFileName" data-badge="@sleeve.BadgeImageFileName" data-games="@games" style="transform: rotate(@(SleeveAngle)deg)">
                     <div class="sleeve-overlay"></div>
@@ -107,6 +109,8 @@
                         <img src="~/dist/img/sleeves/@sleeve.BadgeImageFileName" alt="Small">
                     </div>
                 </a>
+
+                }
             }
         </div>
     </div>
